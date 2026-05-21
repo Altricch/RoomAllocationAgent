@@ -1031,7 +1031,8 @@
       "position": [
         6352,
         1888
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1044,7 +1045,8 @@
       "position": [
         6576,
         1936
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1134,7 +1136,8 @@
           "id": "EgtVSJVi8AqmPhpo",
           "name": "Bearer Auth account"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -1321,12 +1324,12 @@
       "parameters": {
         "content": "## Add comments",
         "height": 416,
-        "width": 1648,
+        "width": 1632,
         "color": 5
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        6288,
+        6304,
         1840
       ],
       "typeVersion": 1,
@@ -2127,7 +2130,7 @@
     "callerPolicy": "workflowsFromSameOwner",
     "availableInMCP": true
   },
-  "versionId": "0c66e436-c5be-47de-b6bd-f02ced0bb57f",
+  "versionId": "4cab1cb3-268b-4957-8921-e6395c184976",
   "meta": {
     "aiBuilderAssisted": true,
     "builderVariant": "mcp",

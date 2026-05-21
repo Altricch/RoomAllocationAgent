@@ -1,0 +1,2122 @@
+{
+  "name": "RoomAssignmentAgent_v1",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "77e4bc2d-1fbe-4a63-b054-e03b49de83ca",
+      "name": "When clicking ‘Execute workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -608,
+        736
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8",
+          "mode": "list",
+          "cachedResultName": "RoomAllocationAgent_Setup_Product",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1802102439,
+          "mode": "list",
+          "cachedResultName": "Setup",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit#gid=1802102439"
+        },
+        "options": {}
+      },
+      "id": "830600ef-537c-4b92-859f-b3f34092b9cf",
+      "name": "Setup_Setup",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        240
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SBHAGiDqIKKIFzVv",
+          "name": "CA_GoogleSheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "numberInputs": 6
+      },
+      "id": "09385c9f-a2b1-4ee0-8e57-fa81ee5e1c42",
+      "name": "Setup_Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        672,
+        656
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8",
+          "mode": "list",
+          "cachedResultName": "RoomAllocationAgent_Setup_Product",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1578616726,
+          "mode": "list",
+          "cachedResultName": "RoomRanks",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit#gid=1578616726"
+        },
+        "options": {}
+      },
+      "id": "303b6dd5-b645-4cab-9e9e-0a841119d68e",
+      "name": "Setup_RoomRanks",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        432
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SBHAGiDqIKKIFzVv",
+          "name": "CA_GoogleSheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8",
+          "mode": "list",
+          "cachedResultName": "RoomAllocationAgent_Setup_Product",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1924424506,
+          "mode": "list",
+          "cachedResultName": "SOPExamples",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit#gid=1924424506"
+        },
+        "options": {}
+      },
+      "id": "425dfe19-ef3b-4a0c-922f-e54188e2b4b5",
+      "name": "Setup_SOPExamples",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        624
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SBHAGiDqIKKIFzVv",
+          "name": "CA_GoogleSheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8",
+          "mode": "list",
+          "cachedResultName": "RoomAllocationAgent_Setup_Product",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 747280348,
+          "mode": "list",
+          "cachedResultName": "CommentGlossary",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit#gid=747280348"
+        },
+        "options": {}
+      },
+      "id": "dee43c6e-9e03-458b-bedd-58303c774c76",
+      "name": "Setup_Glossary",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        816
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SBHAGiDqIKKIFzVv",
+          "name": "CA_GoogleSheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8",
+          "mode": "list",
+          "cachedResultName": "RoomAllocationAgent_Setup_Product",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1325005027,
+          "mode": "list",
+          "cachedResultName": "Memberships",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit#gid=1325005027"
+        },
+        "options": {}
+      },
+      "id": "45e9e9b7-c86b-4959-9b6b-7274dab5afc3",
+      "name": "Setup_Memberships",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        1008
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SBHAGiDqIKKIFzVv",
+          "name": "CA_GoogleSheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8",
+          "mode": "list",
+          "cachedResultName": "RoomAllocationAgent_Setup_Product",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1195103738,
+          "mode": "list",
+          "cachedResultName": "Actions",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/106hsGLALQqeYHZ9c63w2bAhK_IPlS7HaocErKBZRjF8/edit#gid=1195103738"
+        },
+        "options": {}
+      },
+      "id": "aaf979cf-297c-4239-9ee3-d77a75dfc03d",
+      "name": "Setup_Actions",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        1200
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SBHAGiDqIKKIFzVv",
+          "name": "CA_GoogleSheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "03612fb4-74e1-40a3-a518-a08fca8602fd",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -592,
+        1408
+      ]
+    },
+    {
+      "parameters": {
+        "formId": "y8UvnUvY"
+      },
+      "id": "23baa6ab-d00c-4ce6-9b73-b8678fe85332",
+      "name": "Typeform Trigger",
+      "type": "n8n-nodes-base.typeformTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -624,
+        112
+      ],
+      "webhookId": "510212a1-df9c-4f86-a056-db3676349639",
+      "credentials": {
+        "typeformApi": {
+          "id": "TJHv1W6yde1X5wbi",
+          "name": "SARCH_Typeform"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "aa6ee5a1-c92b-4890-ae5c-a6fb630270f2",
+              "name": "mail",
+              "value": "={{ $json[\"What is your email address?\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "a1503f56-8183-415e-9b3e-097a78420e24",
+              "name": "RoomAllocation_Allowed",
+              "value": "={{ $json[\"Should the rooms be allocated?\"] }}",
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7376f6ef-2927-42c9-a3fb-3b6b5e771f02",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -288,
+        112
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// =====================================================================\n// BuildConfig (paste-safe v3)\n//\n// Inputs: a single merged stream from Setup_Merge (mode: append) carrying\n//   rows from 6 Google Sheets tabs: Setup, RoomRanks, SOPExamples,\n//   CommentGlossary, Memberships, Actions. Each tab's rows keep their\n//   original column shape — the first non-\"row_number\" key is the sheet's\n//   title column, which we use to identify which tab a row came from.\n//\n// Output: one JSON object consumed by every downstream node.\n//\n// Written WITHOUT any \"\\n\" or \"\\\\|\" escapes — those get eaten when the\n// SDK round-trips this code, which is what broke the previous version.\n// Uses array.join() with a precomputed newline constant instead.\n// =====================================================================\n\nconst NL = String.fromCharCode(10);  // newline, no escape needed\nconst PIPE = String.fromCharCode(124); // |\n\n// ---------- Helpers ----------\nconst yn = v => String(v == null ? \"\" : v).trim().toUpperCase().startsWith(\"Y\");\nconst num = v => {\n  if (v === null || v === undefined || v === \"\") return null;\n  const n = Number(String(v).replace(/[, ]/g, \"\"));\n  return Number.isFinite(n) ? n : null;\n};\n\n// Return the row's \"logical column\" values, skipping the row_number metadata\n// column. The first item is the sheet's title column, then col_2, col_3, ...\nfunction logicalCols(row) {\n  const keys = Object.keys(row).filter(k => k !== \"row_number\");\n  return keys.map(k => row[k] == null ? \"\" : String(row[k]));\n}\n\n// Skip rows that aren't real data. Every Google Sheets tab in this workbook\n// has the same shape:\n//   row 1 = title (becomes the column header in n8n's output)\n//   row 2 = intro paragraph (long text in col 0, other cols empty)\n//   row 3 = blank\n//   row 4 = column headers (e.g. \"Comment Example\", \"Assign Attribute\", ...)\n//   row 5+ = real data\n//\n// We can't trust row_number alone (a user may add rows). So we filter by\n// shape: a row is \"header-or-intro\" if col 0 matches one of the known column\n// header strings for any tab, or if col 0 is very long (> 60 chars) AND\n// every other column is empty.\nconst HEADER_STRINGS = new Set([\n  \"feature\", \"parameter\",\n  \"rank\", \"room type id\",\n  \"comment example\",\n  \"phrase\",\n  \"membership level\",\n  \"action\",\n]);\nfunction isHeaderOrIntro(v) {\n  const c0 = (v[0] || \"\").trim();\n  if (!c0) return true;\n  if (HEADER_STRINGS.has(c0.toLowerCase())) return true;\n  // Intro paragraph: long prose in col 0 with all other cells empty\n  if (c0.length > 60) {\n    const rest = v.slice(1).map(x => (x || \"\").trim());\n    if (rest.every(x => x === \"\")) return true;\n  }\n  return false;\n}\n\n// First (title) key for the row, lowercased, for classification.\nfunction titleKey(row) {\n  const keys = Object.keys(row).filter(k => k !== \"row_number\");\n  return (keys[0] || \"\").toLowerCase();\n}\n\n// Classify a single row by its title column header.\nfunction classifyRow(row) {\n  const t = titleKey(row);\n  if (!t) return \"Unknown\";\n  if (t.indexOf(\"room allocation agent\") !== -1 || t === \"setup\") return \"Setup\";\n  if (t.indexOf(\"room type rank\") !== -1 || t === \"roomranks\")    return \"RoomRanks\";\n  if (t.indexOf(\"property-specific sop\") !== -1 || t.indexOf(\"comment pattern\") !== -1 || t === \"sopexamples\") return \"SOPExamples\";\n  if (t.indexOf(\"comment glossary\") !== -1 || t === \"commentglossary\" || t === \"glossary\") return \"CommentGlossary\";\n  if (t.indexOf(\"membership\") !== -1 || t === \"memberships\")      return \"Memberships\";\n  if (t.indexOf(\"allowed agent action\") !== -1 || t === \"actions\") return \"Actions\";\n  return \"Unknown\";\n}\n\n// ---------- Collect all rows from the merged stream ----------\nconst allRows = $input.all().map(it => it.json);\n\n// Bucket every row by its detected sheet\nconst buckets = { Setup: [], RoomRanks: [], SOPExamples: [], CommentGlossary: [], Memberships: [], Actions: [], Unknown: [] };\nfor (const row of allRows) buckets[classifyRow(row)].push(row);\n\n// ---------- Parse Setup tab ----------\nconst FEATURE_KEYS = {\n  \"critical attribute\":           \"critical\",\n  \"adjacency\":                    \"adjacency\",\n  \"preference attribute\":         \"preference\",\n  \"booking-group proximity\":      \"groupProximity\",\n  \"floor preference\":             \"floorPreference\",\n  \"upgrade quality\":              \"upgrade\",\n  \"early check-in\":               \"eci\",\n  \"anschlussbuchung\":             \"asb\",\n  \"legionella\":                   \"legionella\",\n  \"room condition\":               \"roomCondition\",\n};\nfunction matchFeatureKey(name) {\n  const lower = String(name == null ? \"\" : name).toLowerCase();\n  for (const needle of Object.keys(FEATURE_KEYS)) {\n    if (lower.indexOf(needle) !== -1) return FEATURE_KEYS[needle];\n  }\n  return null;\n}\n\nconst flags = {};\nconst params = {};\nfor (const row of buckets.Setup) {\n  const v = logicalCols(row);\n  if (isHeaderOrIntro(v)) continue;\n  const label = (v[0] || \"\").trim();\n  if (!label) continue;\n  const featKey = matchFeatureKey(label);\n  if (featKey) {\n    flags[featKey] = { enabled: yn(v[1]), priority: num(v[2]) };\n    continue;\n  }\n  // Parameter rows: label is snake_case\n  if (/^[a-z][a-z0-9_]+$/.test(label)) {\n    params[label] = v[1];\n  }\n}\n\n// ---------- Internal tuning knobs ----------\nconst TUNING = {\n  priorityDecayExponent:     0.7,\n  priorityDecayBaseWeight:   1.0,\n  floorPrefBonusPerStep:     15,\n  legionellaAssignmentBonus: 800,\n  eciDirtyExtraPenalty:      400,\n};\nconst decayExp = TUNING.priorityDecayExponent;\nconst baseW    = TUNING.priorityDecayBaseWeight;\n\nfunction priorityMultiplier(rank) {\n  const r = Number(rank);\n  if (!Number.isFinite(r) || r <= 0) return baseW;\n  return baseW / Math.pow(r, decayExp);\n}\n\nconst featureConfig = {};\nfor (const k of Object.values(FEATURE_KEYS)) {\n  const f = flags[k];\n  if (!f) {\n    featureConfig[k] = { enabled: true, priority: null, multiplier: baseW };\n  } else {\n    featureConfig[k] = {\n      enabled:  f.enabled,\n      priority: f.priority,\n      multiplier: f.enabled ? priorityMultiplier(f.priority) : 0,\n    };\n  }\n}\n\n// ---------- Parse RoomRanks ----------\nconst ranks = [];\nfor (const row of buckets.RoomRanks) {\n  const v = logicalCols(row);\n  if (isHeaderOrIntro(v)) continue;\n  const rank = num(v[0]);\n  const id   = (v[1] || \"\").trim();\n  if (rank === null || !id) continue;\n  ranks.push({\n    rank,\n    id,\n    name: (v[2] || \"\").trim() || null,\n    protectedSuite: yn(v[3]),\n  });\n}\n\n// ---------- Parse SOPExamples ----------\nconst sopExamples = [];\nfor (const row of buckets.SOPExamples) {\n  const v = logicalCols(row);\n  if (isHeaderOrIntro(v)) continue;\n  const ce = (v[0] || \"\").trim();\n  if (!ce) continue;\n  sopExamples.push({\n    commentExample:  ce,\n    assignAttribute: (v[1] || \"\").trim(),\n    actionTake:      (v[2] || \"\").trim(),\n    actionAvoid:     (v[3] || \"\").trim(),\n  });\n}\n\n// ---------- Parse CommentGlossary ----------\nconst glossary = [];\nfor (const row of buckets.CommentGlossary) {\n  const v = logicalCols(row);\n  if (isHeaderOrIntro(v)) continue;\n  const phrase = (v[0] || \"\").trim();\n  if (!phrase) continue;\n  glossary.push({\n    phrase,\n    meaning:        (v[1] || \"\").trim(),\n    triggersAction: (v[2] || \"\").trim(),\n    notes:          (v[3] || \"\").trim(),\n  });\n}\n\n// ---------- Parse Memberships ----------\nconst memberships = [];\nfor (const row of buckets.Memberships) {\n  const v = logicalCols(row);\n  if (isHeaderOrIntro(v)) continue;\n  const level = (v[0] || \"\").trim();\n  const action = (v[2] || \"\").trim();\n  const mode = (v[3] || \"\").trim();\n  if (!level || !action || !mode) continue;\n  const triggers = (v[1] || \"\").split(\",\").map(s => s.trim()).filter(Boolean);\n  memberships.push({ level, triggers, action, mode, notes: (v[4] || \"\").trim() });\n}\n\n// ---------- Parse Actions ----------\nconst actions = [];\nfor (const row of buckets.Actions) {\n  const v = logicalCols(row);\n  if (isHeaderOrIntro(v)) continue;\n  const action = (v[0] || \"\").trim();\n  if (!action) continue;\n  actions.push({\n    action,\n    description:   (v[1] || \"\").trim(),\n    allowedModes:  (v[2] || \"\").trim(),\n    triggeredBy:   (v[3] || \"\").trim(),\n    scoringEffect: (v[4] || \"\").trim(),\n  });\n}\n\n// ---------- Global params ----------\nconst legionellaMaxDays       = num(params.legionella_max_vacancy_days) != null ? num(params.legionella_max_vacancy_days) : 3;\nconst optionalUpgradesAllowed = yn(params.optional_upgrades_allowed == null ? \"Y\" : params.optional_upgrades_allowed);\nconst propertyId              = String(params.property_id == null ? \"\" : params.property_id).trim() || null;\nconst assignForDayRaw         = String(params.assign_for_day == null ? \"today\" : params.assign_for_day).trim().toLowerCase();\nconst assignForDay            = assignForDayRaw === \"tomorrow\" ? \"tomorrow\" : \"today\";\nconst assignDayOffset         = assignForDay === \"tomorrow\" ? 1 : 0;\n\n// ---------- Baseline weights ----------\nconst BASELINE = {\n  critSat:   240, critUnsat: -420, critCap: -1200,\n  prefSat:    90, prefUnsat: -140, prefCap:  -600,\n  adjForcedByDist: { \"0\": 320, \"1\": 210, \"2\": 80, \"3+\": -280 },\n  adjOptByDist:    { \"0\": 120, \"1\":  80, \"2\": 30, \"3+\":  -60 },\n  bookProxByDist:  { \"0\": 140, \"1\": 110, \"2\": 70, \"3\":  30, \"4+\": -40 },\n  bookProxCapGlobal: 1600,\n  adjForcedCap: 1600,\n  adjOptCap:     600,\n  upgradeGood:    80, upgradeNeutral: 10, upgradeBad: -120, upgradeCap: 200,\n  roomState: { clean: 80, inspect: 20, dirty: -120, tomorrow: -260, occupied: -350 },\n  allForcedAdjBonus: 500,\n  groupClusterBonus: 220,\n  unassignedPenalty: -250000,\n  hardConstraintPenalty: -1000000,\n};\n\nconst W = featureConfig;\nfunction scale(featKey, value) {\n  const m = (W[featKey] && W[featKey].multiplier) != null ? W[featKey].multiplier : 1;\n  return Math.round(value * m);\n}\n\nconst scaled = {\n  critSat:   scale(\"critical\", BASELINE.critSat),\n  critUnsat: scale(\"critical\", BASELINE.critUnsat),\n  critCap:   scale(\"critical\", BASELINE.critCap),\n  prefSat:   scale(\"preference\", BASELINE.prefSat),\n  prefUnsat: scale(\"preference\", BASELINE.prefUnsat),\n  prefCap:   scale(\"preference\", BASELINE.prefCap),\n  adjForcedByDist:   Object.fromEntries(Object.entries(BASELINE.adjForcedByDist).map(([k, v]) => [k, scale(\"adjacency\", v)])),\n  adjOptByDist:      Object.fromEntries(Object.entries(BASELINE.adjOptByDist).map(([k, v]) => [k, scale(\"adjacency\", v)])),\n  adjForcedCap:      scale(\"adjacency\", BASELINE.adjForcedCap),\n  adjOptCap:         scale(\"adjacency\", BASELINE.adjOptCap),\n  allForcedAdjBonus: scale(\"adjacency\", BASELINE.allForcedAdjBonus),\n  bookProxByDist:    Object.fromEntries(Object.entries(BASELINE.bookProxByDist).map(([k, v]) => [k, scale(\"groupProximity\", v)])),\n  bookProxCapGlobal: scale(\"groupProximity\", BASELINE.bookProxCapGlobal),\n  groupClusterBonus: scale(\"groupProximity\", BASELINE.groupClusterBonus),\n  upgradeGood:       scale(\"upgrade\", BASELINE.upgradeGood),\n  upgradeNeutral:    scale(\"upgrade\", BASELINE.upgradeNeutral),\n  upgradeBad:        scale(\"upgrade\", BASELINE.upgradeBad),\n  upgradeCap:        scale(\"upgrade\", BASELINE.upgradeCap),\n  roomState:         Object.fromEntries(Object.entries(BASELINE.roomState).map(([k, v]) => [k, scale(\"roomCondition\", v)])),\n  floorPrefBonusPerStep:     scale(\"floorPreference\", TUNING.floorPrefBonusPerStep),\n  legionellaAssignmentBonus: scale(\"legionella\",      TUNING.legionellaAssignmentBonus),\n  eciDirtyExtraPenalty:      scale(\"eci\",             TUNING.eciDirtyExtraPenalty),\n  unassignedPenalty:     BASELINE.unassignedPenalty,\n  hardConstraintPenalty: BASELINE.hardConstraintPenalty,\n};\n\n// ---------- Markdown table builders (no \"\\n\" in string literals) ----------\nfunction escapeCell(s) {\n  // Strip pipes and any newline-class chars without using \\n escapes in source\n  return String(s == null ? \"\" : s)\n    .split(PIPE).join(\"/\")\n    .split(\"\\r\").join(\" \")\n    .split(String.fromCharCode(10)).join(\" \")\n    .trim();\n}\n\nfunction buildMd(headers, rows) {\n  const lines = [];\n  lines.push(PIPE + \" \" + headers.join(\" \" + PIPE + \" \") + \" \" + PIPE);\n  lines.push(PIPE + \" \" + headers.map(() => \"---\").join(\" \" + PIPE + \" \") + \" \" + PIPE);\n  for (const r of rows) {\n    lines.push(PIPE + \" \" + r.map(escapeCell).join(\" \" + PIPE + \" \") + \" \" + PIPE);\n  }\n  return lines.join(NL);\n}\n\nconst sopTableMarkdown = buildMd(\n  [\"Comment Example\", \"Assign Attribute\", \"Action to take\", \"Action NOT to take\"],\n  sopExamples.map(r => [r.commentExample, r.assignAttribute, r.actionTake, r.actionAvoid])\n);\n\nconst glossaryTableMarkdown = buildMd(\n  [\"Phrase\", \"Meaning\", \"Triggers Action\", \"Notes\"],\n  glossary.map(g => [g.phrase, g.meaning, g.triggersAction, g.notes])\n);\n\nconst membershipsTableMarkdown = buildMd(\n  [\"Membership Level\", \"Recognise in comment as\", \"Action\", \"Mode\", \"Notes\"],\n  memberships.map(m => [m.level, m.triggers.join(\", \"), m.action, m.mode, m.notes])\n);\n\nconst actionsTableMarkdown = buildMd(\n  [\"Action\", \"What it means\", \"Allowed Modes\", \"Triggered by\"],\n  actions.map(a => [a.action, a.description, a.allowedModes, a.triggeredBy])\n);\n\n// ---------- Output ----------\nreturn [{\n  json: {\n    features:                  featureConfig,\n    weights:                   scaled,\n    legionellaMaxDays,\n    optionalUpgradesAllowed,\n    propertyId,\n    assignForDay,\n    assignDayOffset,\n    decayExp,\n    baseWeight: baseW,\n    roomTypeRanks:             ranks,\n    protectedSuiteRanks:       ranks.filter(r => r.protectedSuite).map(r => r.rank),\n    sopExamples,\n    sopTableMarkdown,\n    glossary,\n    glossaryTableMarkdown,\n    memberships,\n    membershipsTableMarkdown,\n    actions,\n    actionsTableMarkdown,\n    rawParams: params,\n    _debug: {\n      bucketCounts: Object.fromEntries(Object.entries(buckets).map(([k, v]) => [k, v.length])),\n      sampleTitles: allRows.slice(0, 10).map(r => titleKey(r)),\n    },\n  }\n}];"
+      },
+      "id": "ea737f63-9b2b-4c2b-b8a0-9794cdc4d8d6",
+      "name": "BuildConfig",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5fe090f6-43c7-4839-86a3-90ebce8d557c",
+              "name": "propID",
+              "value": "={{ $('BuildConfig').first().json.propertyId }}",
+              "type": "string"
+            },
+            {
+              "id": "57b23e4c-f2ec-48d6-87c5-19b86024ad07",
+              "name": "assing",
+              "value": "=true",
+              "type": "boolean"
+            },
+            {
+              "id": "9a5e6c12-9c75-4ce1-b9a2-1e0d3a82c411",
+              "name": "assignForDay",
+              "value": "={{ $('BuildConfig').first().json.assignForDay }}",
+              "type": "string"
+            },
+            {
+              "id": "1ad44ca6-2b30-4427-86b5-b3915b7c2f6a",
+              "name": "assignDayOffset",
+              "value": "={{ $('BuildConfig').first().json.assignDayOffset }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ff023754-c898-4a12-8cfb-16055c861df2",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1120,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://identity.apaleo.com/connect/token",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "specifyBody": "string",
+        "body": "grant_type=client_credentials",
+        "options": {}
+      },
+      "id": "4cf2d059-a303-47bd-983c-a13da9655464",
+      "name": "Get Access Token",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1344,
+        720
+      ],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "Ae9VAhI7PSXpjwKR",
+          "name": "Apaleo_CA_Test"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "65d85ed9-96fe-440f-ab97-9fdcd7259336",
+              "leftValue": "={{ $('Edit Fields1').item.json.assing }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f6dded93-dcd1-4ae1-b3b0-b2db0a25a369",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1568,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "group": "booking-v1",
+        "resource": "Reservation",
+        "operation": "BookingReservationsGet",
+        "additionalFields": {
+          "dateFilter": "Arrival",
+          "expand": [
+            "assignedUnits"
+          ],
+          "from": "={{ $now.plus({days: 1}).toFormat('yyyy-LL-dd 00:00:00') }}",
+          "propertyIds": [
+            "={{ $('Edit Fields1').item.json.propID }}"
+          ],
+          "status": [
+            "Confirmed"
+          ],
+          "to": "={{ $now.plus({days: 1}).toFormat('yyyy-LL-dd 23:59:59') }}"
+        },
+        "requestOptions": {}
+      },
+      "id": "d692450f-ba47-4e6b-ae4d-3d29d2488093",
+      "name": "Apaleo Official",
+      "type": "@apaleo/n8n-nodes-apaleo-official.apaleo",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        416
+      ],
+      "credentials": {
+        "apaleoOAuth2Api": {
+          "id": "daX70DXrFi4bhjqb",
+          "name": "CA_Dev_Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const reservations = $input.first().json.reservations;\nconst assignments = reservations.filter(r => r.assignedUnits && r.assignedUnits.length > 0).map(r => ({ id: r.id, unitId: r.assignedUnits[0].unit.id, roomName: r.assignedUnits[0].unit.name }));\nreturn [{ json: { assignments } }];"
+      },
+      "id": "b9f0b7b5-ee21-4add-a6c3-48b077e086d8",
+      "name": "Code in JavaScript5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2160,
+        272
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Unassign every reservation in the list below by calling the unassign unit tool for each one. Work through them sequentially, one by one, using the id field as the reservation ID. Continue until all reservations have been processed.\n\nReservations to unassign:\n{{ JSON.stringify($json.assignments) }}",
+        "hasOutputParser": true,
+        "options": {
+          "maxIterations": 1000,
+          "returnIntermediateSteps": false
+        }
+      },
+      "id": "32dc644a-d2b4-4d74-8cc4-661b73f9dec5",
+      "name": "AI Agent2",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2448,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "60caff42-72d6-42dc-98ef-c8013e84d27b",
+      "name": "OpenRouter Chat Model3",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2384,
+        384
+      ],
+      "credentials": {
+        "openRouterApi": {
+          "id": "dHTFYaGfRO4CcOA2",
+          "name": "SARCH_OPENROUTER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "group": "booking-v1",
+        "resource": "ReservationActions",
+        "operation": "BookingReservation-actionsByIdUnassign-unitsPut",
+        "BookingReservation-actionsByIdUnassign-unitsPut_id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ID', ``, 'string') }}",
+        "requestOptions": {}
+      },
+      "id": "cee2284f-5c6f-4389-94b7-b2b825b3adb7",
+      "name": "Unassign units from a reservation in Apaleo Official",
+      "type": "@apaleo/n8n-nodes-apaleo-official.apaleoTool",
+      "typeVersion": 1,
+      "position": [
+        2512,
+        384
+      ],
+      "credentials": {
+        "apaleoOAuth2Api": {
+          "id": "daX70DXrFi4bhjqb",
+          "name": "CA_Dev_Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\"type\":\"object\",\"properties\":{\"summary\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"successful\":{\"type\":\"number\"},\"failed\":{\"type\":\"number\"}},\"required\":[\"total\",\"successful\",\"failed\"]},\"assignments\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"unitId\":{\"type\":\"string\"},\"roomName\":{\"type\":\"string\"},\"status\":{\"type\":\"string\",\"enum\":[\"success\",\"failed\"]}},\"required\":[\"id\",\"unitId\",\"roomName\",\"status\"]}}},\"required\":[\"summary\",\"assignments\"]}"
+      },
+      "id": "317ac1a3-0719-4c63-adf5-0892501776e2",
+      "name": "Structured Output Parser2",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        2640,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json.output;\nconst propID = $('Edit Fields1').first().json.propID;\n\nconst today = new Date();\nconst todayStr = today.toISOString().slice(0, 10);\n\nconst rows = data.assignments.map(a => `\n  <tr>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#1a1a1a;\">${a.id}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#555;\">${a.unitId}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#555;\">${a.roomName}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;\">\n      <span style=\"display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;background:${a.status === 'success' ? '#e8f5ee' : '#fdecea'};color:${a.status === 'success' ? '#2d6a4f' : '#c0392b'};\">\n        ${a.status}\n      </span>\n    </td>\n  </tr>\n`).join('');\n\nconst html = `\n<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\"/></head>\n<body style=\"margin:0;padding:40px 20px;background:#f5f2ee;font-family:'Courier New',monospace;\">\n  <div style=\"max-width:680px;margin:0 auto;\">\n\n    <!-- Header -->\n    <div style=\"background:#1a1a1a;padding:36px 40px;border-radius:4px 4px 0 0;\">\n      <div style=\"font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#888;margin-bottom:8px;\">Hotel ${propID} · Front Desk Report</div>\n      <div style=\"font-size:26px;font-weight:600;color:#f5f2ee;letter-spacing:-0.02em;\">Room Unassignment Summary</div>\n      <div style=\"font-size:11px;color:#666;margin-top:6px;\">${todayStr}</div>\n    </div>\n\n    <!-- Stats -->\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#fff;border-left:1px solid #e0ddd8;border-right:1px solid #e0ddd8;\">\n      <tr>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;border-right:1px solid #f0ede8;\">\n          <div style=\"font-size:36px;font-weight:700;color:#1a1a1a;line-height:1;\">${data.summary.total}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Total</div>\n        </td>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;border-right:1px solid #f0ede8;\">\n          <div style=\"font-size:36px;font-weight:700;color:#2d6a4f;line-height:1;\">${data.summary.successful}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Unassigned</div>\n        </td>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;\">\n          <div style=\"font-size:36px;font-weight:700;color:#c0392b;line-height:1;\">${data.summary.failed}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Failed</div>\n        </td>\n      </tr>\n    </table>\n\n    <!-- Table -->\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#fff;border:1px solid #e0ddd8;border-top:none;border-radius:0 0 4px 4px;\">\n      <tr style=\"background:#f5f2ee;\">\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Reservation ID</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Unit ID</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Room</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Status</th>\n      </tr>\n      ${rows}\n    </table>\n\n    <!-- Footer -->\n    <div style=\"margin-top:24px;text-align:center;font-size:10px;color:#bbb;letter-spacing:0.1em;text-transform:uppercase;\">\n      ${propID} · ${todayStr} · Automated Unassignment Report\n    </div>\n\n  </div>\n</body>\n</html>\n`;\n\nreturn [{ json: { html } }];"
+      },
+      "id": "1a9dd031-9fee-4532-b1a9-43e0936ed863",
+      "name": "Code in JavaScript4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2848,
+        272
+      ]
+    },
+    {
+      "parameters": {
+        "group": "booking-v1",
+        "resource": "Reservation",
+        "operation": "BookingReservationsGet",
+        "additionalFields": {
+          "dateFilter": "Stay",
+          "expand": [
+            "assignedUnits"
+          ],
+          "from": "={{ $now.plus({ days: $('Edit Fields1').item.json.assignDayOffset - 3 }).toFormat('yyyy-MM-dd HH:mm:ss') }}",
+          "propertyIds": [
+            "={{ $('Edit Fields1').item.json.propID }}"
+          ],
+          "status": [
+            "InHouse, Confirmed, CheckedOut"
+          ],
+          "to": "={{ $now.plus({ days: $('Edit Fields1').item.json.assignDayOffset + 7 }).toFormat('yyyy-MM-dd HH:mm:ss') }}"
+        },
+        "requestOptions": {}
+      },
+      "id": "24eec5b0-c122-4fcf-a9d8-1ddd04b87431",
+      "name": "ListofReservations_withRoom",
+      "type": "@apaleo/n8n-nodes-apaleo-official.apaleo",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        960
+      ],
+      "credentials": {
+        "apaleoOAuth2Api": {
+          "id": "daX70DXrFi4bhjqb",
+          "name": "CA_Dev_Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst reservations = [];\nfor (const item of items) {\n  if (Array.isArray(item.json.reservations)) {\n    reservations.push(...item.json.reservations);\n  }\n}\n\nconst cfg = (() => {\n  try { return $('BuildConfig').first().json; }\n  catch (_) { return {}; }\n})();\nconst LEGIONELLA_MAX_DAYS = Number(cfg.legionellaMaxDays ?? 3);\nconst ASSIGN_DAY_OFFSET   = Number(cfg.assignDayOffset ?? 0);\n\nconst toDateOnly = (iso) => iso.split('T')[0];\n\nfunction daysBetween(a, b) { return Math.round((new Date(b) - new Date(a)) / 86400000); }\nfunction addDays(dateStr, n) { const d = new Date(dateStr); d.setDate(d.getDate() + n); return toDateOnly(d.toISOString()); }\n\nconst now = new Date();\nconst realToday = toDateOnly(now.toISOString());\nconst todayStr  = addDays(realToday, ASSIGN_DAY_OFFSET);\nconst windowEnd = addDays(todayStr, 6);\n\nconst roomMap = {};\nfor (const r of reservations) {\n  const roomId = r.unit?.id;\n  if (!roomId || !r.arrival || !r.departure) continue;\n  if (!roomMap[roomId]) {\n    roomMap[roomId] = { roomId, roomName: r.unit?.name, property: r.property?.name, reservations: [] };\n  }\n  roomMap[roomId].reservations.push({ arrival: toDateOnly(r.arrival), departure: toDateOnly(r.departure), status: r.status, reservationId: r.id, bookingId: r.booking?.id });\n}\n\nconst roomTimelines = Object.values(roomMap).map(room => {\n  const sorted = room.reservations.sort((a, b) => a.arrival.localeCompare(b.arrival));\n  const occupiedToday = sorted.some(r => r.arrival <= todayStr && r.departure > todayStr);\n  const checkoutToday = sorted.some(r => r.departure === todayStr);\n  const checkinToday  = sorted.some(r => r.arrival === todayStr);\n  const pastDepartures = sorted.filter(r => r.status === 'CheckedOut' && r.departure <= todayStr).map(r => r.departure).sort();\n  const lastCheckedOutDeparture = pastDepartures.length ? pastDepartures[pastDepartures.length - 1] : null;\n  const daysVacantSinceCheckout = (!occupiedToday && lastCheckedOutDeparture) ? daysBetween(lastCheckedOutDeparture, todayStr) : null;\n  const legionellaRisk = daysVacantSinceCheckout !== null && daysVacantSinceCheckout >= LEGIONELLA_MAX_DAYS;\n  const pastReservations = sorted.filter(r => r.departure <= todayStr);\n  const lastReservation = pastReservations[pastReservations.length - 1] ?? null;\n  const todayReservation = sorted.find(r => r.arrival <= todayStr && r.departure >= todayStr) ?? null;\n  const availableWindows = [];\n  const futureReservations = sorted.filter(r => r.departure > todayStr);\n  let cursor = todayStr;\n  for (const res of futureReservations) {\n    if (cursor < res.arrival) {\n      const from = cursor < todayStr ? todayStr : cursor;\n      const to   = res.arrival;\n      if (from < to) availableWindows.push({ from, to, daysAvailable: daysBetween(from, to), openEnded: false });\n    }\n    if (res.departure > cursor) cursor = res.departure;\n  }\n  if (cursor < windowEnd) {\n    const from = cursor < todayStr ? todayStr : cursor;\n    availableWindows.push({ from, to: windowEnd, daysAvailable: daysBetween(from, windowEnd), openEnded: true });\n  }\n  let statusToday = 'available';\n  if (occupiedToday) statusToday = 'occupied';\n  else if (checkoutToday) statusToday = 'checkout_today';\n  return { roomId: room.roomId, roomName: room.roomName, property: room.property, statusToday, checkinToday, checkoutToday, lastCheckedOutDeparture, daysVacantSinceCheckout, legionellaRisk, legionellaThresholdDays: LEGIONELLA_MAX_DAYS, availableWindows, reservations: sorted, lastReservation, todayReservation };\n});\n\nconst sortedTimelines = roomTimelines.sort((a, b) => {\n  const aName = a.roomName ?? '', bName = b.roomName ?? '';\n  const aNum = parseInt(aName, 10), bNum = parseInt(bName, 10);\n  if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;\n  return aName.localeCompare(bName);\n});\n\nreturn [{ json: { RoomRack: sortedTimelines } }];"
+      },
+      "id": "ebb4fb20-82c5-446e-aed5-cfd7d0cde95a",
+      "name": "Blocked_AvailToday_Preassigned",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2016,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "group": "inventory-v1",
+        "resource": "Unit",
+        "operation": "InventoryUnitsGet",
+        "additionalFields": {
+          "expand": [
+            "assignedUnits"
+          ],
+          "propertyId": "={{ $('Edit Fields1').first().json.propID }}"
+        },
+        "requestOptions": {}
+      },
+      "id": "0d89be65-d047-420e-8df7-ef7a8f0217e1",
+      "name": "AllRooms",
+      "type": "@apaleo/n8n-nodes-apaleo-official.apaleo",
+      "typeVersion": 1,
+      "position": [
+        2464,
+        960
+      ],
+      "credentials": {
+        "apaleoOAuth2Api": {
+          "id": "daX70DXrFi4bhjqb",
+          "name": "CA_Dev_Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const bucketItems = $('Blocked_AvailToday_Preassigned').all();\nconst units = $input.first().json.units || [];\nconst blockedRoomIds = new Set();\nconst availableTodayIds = new Set();\nfor (const item of bucketItems) {\n  const bucket = item.json;\n  if (bucket.bucket === 'blocked_rooms') for (const room of bucket.rooms || []) blockedRoomIds.add(room.roomId);\n  if (bucket.bucket === 'available_today') for (const room of bucket.rooms || []) availableTodayIds.add(room.roomId);\n}\nfunction mapUnit(unit) { return { roomId: unit.id, roomName: unit.name, propertyId: unit.property?.id, unitGroupId: unit.unitGroup?.id, maxPersons: unit.maxPersons, condition: unit.status?.condition || 'Unknown', isOccupied: unit.status?.isOccupied || false, attributes: unit.attributes?.map(a => a.name) || [] }; }\nconst availableClean = [], availableInspect = [], availableDirty = [], availableToday = [];\nfor (const unit of units) {\n  const roomId = unit.id;\n  const hasMaintenance = !!unit.status?.maintenance;\n  if (hasMaintenance) continue;\n  const room = mapUnit(unit);\n  if (!blockedRoomIds.has(roomId)) {\n    switch (room.condition) {\n      case 'Clean': availableClean.push(room); break;\n      case 'Inspect': availableInspect.push(room); break;\n      default: availableDirty.push(room);\n    }\n  }\n  if (availableTodayIds.has(roomId)) availableToday.push(room);\n}\nreturn [{ json: { availableRooms: { available_clean: availableClean, available_inspect: availableInspect, available_dirty: availableDirty, available_today: availableToday } } }];"
+      },
+      "id": "eebd05c3-3625-4bbd-ae25-7ad95514f2bd",
+      "name": "AvailableRoomsByScoring",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2944,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const inventory = $('AllRooms').first().json.units;\nconst uniqueAttributesMap = new Map();\ninventory.forEach(unit => {\n    if (unit.attributes && Array.isArray(unit.attributes)) {\n        unit.attributes.forEach(attr => { if (!uniqueAttributesMap.has(attr.id)) uniqueAttributesMap.set(attr.id, attr); });\n    }\n});\nconst unitAttributes = Array.from(uniqueAttributesMap.values());\nreturn [{ json: { unitAttributes, count: unitAttributes.length } }];"
+      },
+      "id": "2cf3cff9-4961-4847-9994-7fb5365090bf",
+      "name": "UniqueAttributes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3280,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.apaleo.com/operations/v1/maintenances",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "propertyId",
+              "value": "={{ $('Edit Fields1').item.json.propID }}"
+            },
+            {
+              "name": "expand",
+              "value": "unit"
+            },
+            {
+              "name": "from",
+              "value": "={{ $now.plus({ days: 0 }).startOf('day').toFormat(\"yyyy-MM-dd'T'HH:mm:ss'Z'\") }}"
+            },
+            {
+              "name": "to",
+              "value": "={{ $now.plus({ days: 7 }).startOf('day').toFormat(\"yyyy-MM-dd'T'HH:mm:ss'Z'\") }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {}
+        }
+      },
+      "id": "a62f00b0-05d0-4106-be2c-86c178ee894c",
+      "name": "GetMaintenance",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3728,
+        960
+      ],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "Ae9VAhI7PSXpjwKR",
+          "name": "Apaleo_CA_Test"
+        },
+        "httpBearerAuth": {
+          "id": "EgtVSJVi8AqmPhpo",
+          "name": "Bearer Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst maintenances = [];\nfor (const item of items) if (Array.isArray(item.json.maintenances)) maintenances.push(...item.json.maintenances);\nconst result = maintenances.map(m => ({ roomId: m.unit?.id ?? null, roomName: m.unit?.name ?? null, from: m.from ?? null, to: m.to ?? null, type: m.type ?? null, description: m.description ?? null }));\nreturn [{ json: { MaintenanceSlots: result } }];"
+      },
+      "id": "ecd9cfe3-05a8-4f88-804b-3912fadab8dc",
+      "name": "Maintenance_Slots",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3952,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "group": "booking-v1",
+        "resource": "Reservation",
+        "operation": "BookingReservationsGet",
+        "additionalFields": {
+          "dateFilter": "Arrival",
+          "from": "={{ $now.plus({ days: $('Edit Fields1').first().json.assignDayOffset }).startOf('day').toISO() }}",
+          "propertyIds": [
+            "={{ $('Edit Fields1').first().json.propID }}"
+          ],
+          "status": [
+            "Confirmed"
+          ],
+          "to": "={{ $now.plus({ days: $('Edit Fields1').first().json.assignDayOffset }).endOf('day').toISO() }}"
+        },
+        "requestOptions": {}
+      },
+      "id": "5cc849a7-60d3-4b55-9d30-32538271681c",
+      "name": "Returns a list of all reservations filtered by the specified parameters",
+      "type": "@apaleo/n8n-nodes-apaleo-official.apaleo",
+      "typeVersion": 1,
+      "position": [
+        4336,
+        960
+      ],
+      "credentials": {
+        "apaleoOAuth2Api": {
+          "id": "daX70DXrFi4bhjqb",
+          "name": "CA_Dev_Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const firstItem = items[0];\nconst allReservations = firstItem.json.reservations || firstItem.json[0]?.reservations || [];\nconst confirmedReservations = allReservations.filter(r => r.status === 'Confirmed');\nconst mappedReservations = confirmedReservations.map(r => ({ bookingId: r.bookingId, reservationId: r.id, arrival: r.arrival, departure: r.departure, roomType: r.unitGroup?.id || null, guestComment: r.guestComment || null, comment: r.comment || null }));\nreturn [{ json: { reservations: mappedReservations } }];"
+      },
+      "id": "d0bddb12-78e3-43a3-9663-380625e6d5e6",
+      "name": "ArrivalsToday",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4512,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "==## **SYSTEM ROLE**\n\nYou are **MCP-Agent**, a room assignment assistant.\n\nYour task is to:\n\n1. Analyze guest reservation requests\n2. Match them **only** to valid **unit attributes**\n3. Determine **allowed commercial actions** and **operational flags**\n4. Classify each action as either **FORCED** or **OPTIONAL**\n5. Ensure consistent action handling across reservations sharing the same `bookingId`\n\n---\n\n# **Inputs**\n\n## **Unit Attributes**\n\nEach unit attribute contains:\n\n* `id` (string)\n* `name` (string)\n* Optional `description`\n\nOnly these attributes are eligible for matching.\n\n```text\n{{ JSON.stringify($('UniqueAttributes').first().json.unitAttributes) }}\n```\n\n---\n\n## **Reservations**\n\nEach reservation contains:\n\nSTRICT RULE: YOU HAVE TO OUTPUT ALL RESERVATIONS THAT YOU HAVE RECEIVED! DO NOT OMIT ANY RESERVATION IN THE OUTPUT.\n\n* `bookingId`\n* `reservationId`\n* `roomType`\n* `guestComment`\n* `comment`\n\n```text\n{{ JSON.stringify($('ArrivalsToday').item.json.reservations) }}\n```\n\n---\n\n# 📚 PROPERTY-SPECIFIC COMMENT GLOSSARY\n\nThe following glossary contains phrases that have a special meaning at this property. **Always consult the glossary before inferring anything.** If a phrase appears here, use the listed meaning and trigger the listed action — do not improvise.\n\n{{ $('BuildConfig').first().json.glossaryTableMarkdown }}\n\n---\n\n# 🧷 PROPERTY-SPECIFIC SOP EXAMPLES\n\nThese rows show positive examples (what an attribute or comment means here) and negative examples (what NOT to infer). Treat them as overrides of generic matching logic.\n\n{{ $('BuildConfig').first().json.sopTableMarkdown }}\n\n---\n\n# 🔎 MATCHING INSTRUCTIONS (STRICT)\n\n1. Analyze both `comment` and `guestComment`.\n2. Identify **explicit or clearly implied room-related requests only**.\n3. Match only if clearly corresponding to provided unit attributes.\n4. Ignore:\n\n   * Late check-in\n   * Arrival time\n   * Breakfast\n   * Parking\n   * Operational notes\n   * Payment notes\n   * Internal staff notes\n\n---\n\n# ✅ EXPLICIT MATCHES → `matchedRequests`\n\n* Must be an array.\n* Each item must contain exactly one key-value pair:\n\n  * Key = valid `unitAttribute.id`\n  * Value = short guest-friendly phrase derived from the request.\n* No duplicates.\n* No empty strings.\n* No combining multiple attributes in one object.\n* Do not include attributes that were not requested.\n\nIf none:\n\n```json\n\"matchedRequests\": []\n```\n\n---\n\n# 🧠 INFERRED MATCHES → `inferredMatchedRequests` (STRONG ONLY)\n\nOnly infer when there is a **clear, strong semantic connection** between the request text and a specific provided unit attribute.\n\n## Mandatory Rules\n\n1. `attributeType` must exactly equal the matched unit attribute's `name` (verbatim from the Unit Attributes list).\n2. `inferredBy` must be the exact substring from `comment` or `guestComment` that triggered the inference.\n3. Do not output generic categories such as:\n\n   * \"location\"\n   * \"view\"\n   * \"preference\"\n   * \"AI\"\n4. Do not paraphrase the triggering phrase.\n5. If mapping is uncertain → do not infer.\n\n## Allowed Strong Examples\n\n* \"Nice view\" → Garden view (inferredBy = \"Nice view\")\n* \"Away from elevator\" → Far from Elevator (inferredBy = \"Away from elevator\")\n* \"Quiet Room\" → Far from Elevator (inferredBy = \"Quiet Room\")\n\n## Required Format\n\n```json\n{\n  \"ATTRIBUTE_ID\": {\n    \"attributeType\": \"<EXACT attribute name>\",\n    \"inferredBy\": \"<EXACT triggering substring>\"\n  }\n}\n```\n\nIf none:\n\n```json\n\"inferredMatchedRequests\": []\n```\n\n---\n\n# 🚩 OPERATIONAL FLAGS (STRUCTURED ACTIONS)\n\nThese are **not** room attribute matches. They go into `allowedActions` as their own action string.\n\n---\n\n## 1️⃣ Early Check-In → `\"EarlyCheckIn\"`\n\nDetect any signal the guest intends to arrive earlier than standard check-in.\n\nTriggers (any language): `ECI`, `Early CI`, `Early Check In`, `Frühanreise`, `früh ankommen`, `morning arrival`, `arriving early`, …\n\n```json\n{ \"action\": \"EarlyCheckIn\", \"mode\": \"FORCED\" }\n```\n\nDo not trigger for \"late check-in\" or arrivals after standard check-in.\n\n---\n\n## 2️⃣ Continuation Booking → `\"ASB: <identifier>\"`\n\nDetect the prefix **ASB** (Anschlussbuchung — continuation booking). The guest should receive the **same room as before**.\n\nThe identifier following ASB can be one of three things; output all of them verbatim, the optimiser will resolve them:\n\n* A **room number** (e.g. \"ASB von 216\" → identifier = `von 216`, optimiser will extract `216`)\n* A **reservation ID** (e.g. \"ASB-LEJCGZCM\" → identifier = `LEJCGZCM`)\n* A **booking ID** (e.g. \"ASB: BKG-1234\" → identifier = `BKG-1234`)\n\n### Trigger examples:\n\n* `ASB von 216`, `ASB Zimmer 216`, `ASB Room 305`\n* `ASB-LEJCGZCM`, `ASB LEJCGZCM`, `ASB: LEJCGZCM`\n* `ASB-1234`, `ASB 5678`\n\n### Extraction:\n\nTake everything after `ASB` (trim spaces, dashes, colons) and output it as-is. **Do not** try to convert a room number into a reservation ID — pass it through and let the optimiser resolve it.\n\n```json\n{ \"action\": \"ASB: von 216\",      \"mode\": \"FORCED\" }\n{ \"action\": \"ASB: LEJCGZCM\",     \"mode\": \"FORCED\" }\n```\n\n**Always FORCED.** If the optimiser cannot bind to the requested room, the daily report will surface it under \"Unmet ASBs\" for manual review.\n\n---\n\n## 3️⃣ Floor Preference → `\"FloorPreference: high\"` or `\"FloorPreference: low\"`\n\nHigh floor triggers: `high floor`, `upper floor`, `top floor`, `oberes Stockwerk`, `oben`, `HF` (only when clearly about floor).\n\nLow floor triggers: `low floor`, `lower floor`, `ground floor`, `erdgeschoss`, `unten`. **`LF` alone NEVER means low floor.**\n\n```json\n{ \"action\": \"FloorPreference: high\", \"mode\": \"OPTIONAL\" }\n{ \"action\": \"FloorPreference: low\",  \"mode\": \"OPTIONAL\" }\n```\n\nAlways OPTIONAL.\n\n---\n\n# 💼 ALLOWED ACTIONS (STRUCTURED FORMAT)\n\n`allowedActions` must be an array of `{ \"action\": \"...\", \"mode\": \"FORCED\" | \"OPTIONAL\" }`.\n\n## ✅ Allowed Action Catalogue\n\nThe full catalogue of actions this property supports — what each action means, which modes are valid for it, and what triggers it. **Do not emit any action that is not in this table.**\n\n{{ $('BuildConfig').first().json.actionsTableMarkdown }}\n\nNo duplicates. No other values. Use the exact action string shown in the first column.\n\n---\n\n# 🧩 ADJACENCY LOGIC\n\n## Explicit request\n\"room next to X\", \"adjacent rooms\", \"rooms next to each other\", \"connecting rooms\"\n\nIf X maps to another reservation in the input list:\n\n```json\n{ \"action\": \"Adjacency: <reservationId>\", \"mode\": \"FORCED\" }\n```\n\nReciprocal: if A → B, B → A. No guessing.\n\n## Same bookingId\nReservations sharing a `bookingId` → automatically add reciprocal `Adjacency` actions (`FORCED`).\n\n---\n\n# 🏨 BOOKING GROUP CONSISTENCY\n\nIf multiple reservations share a `bookingId`:\n\n1. Determine upgrade/upsell at booking level → apply the same upgrade to all members.\n2. Pick the highest applicable upgrade tier.\n3. Adjacency differs per reservation (references specific reservationIds).\n4. **Per-reservation operational flags** (EarlyCheckIn, ASB, FloorPreference) are applied **individually**, not propagated.\n\n---\n\n# 📈 UPGRADE RULES\n\n## A) Explicit Upgrade Request (no status)\n\n\"upgrade us\", \"any complimentary upgrade?\" →\n\n```json\n{ \"action\": \"Upgrade 1\", \"mode\": \"OPTIONAL\" }\n```\n\n## B) Loyalty Status (explicit only)\n\nThe membership tiers and their corresponding actions are defined by the property. Look for any of the trigger phrases below in `comment` or `guestComment` (case-insensitive, any language). When you find a match, emit the matching Action with the listed Mode.\n\n{{ $('BuildConfig').first().json.membershipsTableMarkdown }}\n\nHighest tier wins if multiple match. Status must be explicitly written — do NOT infer from tone, \"frequent guest\", or general politeness. If no membership phrase appears, emit no upgrade for this rule.\n\n---\n\n# 💰 UPSELL\n\nOnly if the guest explicitly indicates willingness to pay:\n\n```json\n{ \"action\": \"Upsell\", \"mode\": \"OPTIONAL\" }\n```\n\n---\n\n# 🚫 IF NO ACTIONS APPLY\n\n```json\n\"allowedActions\": []\n```\n\n---\n\n# 📦 OUTPUT FORMAT (STRICT)\n\nEach reservation object must contain exactly:\n\n* `bookingId`\n* `reservationId`\n* `roomType`\n* `guestComment`\n* `comment`\n* `matchedRequests`\n* `inferredMatchedRequests`\n* `allowedActions`\n\nNo extra fields. No explanations. Valid JSON only.\n\n---\n\n# 🔒 STRICT BEHAVIOR SUMMARY\n\n* NEVER OMIT ANY RESERVATION.\n* Consult the property glossary before inferring anything.\n* Match only provided unit attributes.\n* Infer only when strongly justified.\n* Pass through ASB identifiers verbatim — room numbers OR reservation/booking IDs.\n* Apply booking-level upgrade consistency.\n* Apply automatic adjacency for same bookingId.\n* Apply reciprocal adjacency when explicitly requested.\n* Never treat LF alone as a floor preference.\n* Never propagate per-reservation operational flags across a bookingId group.\n* Never hallucinate. Output JSON only.",
+        "hasOutputParser": true,
+        "options": {
+          "maxIterations": 1000,
+          "returnIntermediateSteps": false
+        }
+      },
+      "id": "e4fe83ec-af59-464a-81bd-ded5f7deb67e",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        4784,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "model": "anthropic/claude-opus-4.7",
+        "options": {}
+      },
+      "id": "9ce69d44-9af7-4135-b174-497140c4a403",
+      "name": "OpenRouter Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        4688,
+        1184
+      ],
+      "credentials": {
+        "openRouterApi": {
+          "id": "dHTFYaGfRO4CcOA2",
+          "name": "SARCH_OPENROUTER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "prompt": "Instructions:\n--------------\n{instructions}\n--------------\nCompletion:\n--------------\n{completion}\n--------------\n\nAbove, the Completion did not satisfy the constraints given in the Instructions.\nError:\n--------------\n{error}\n--------------\n\nPlease try again. Please only respond with an answer that satisfies the constraints laid out in the Instructions:"
+        }
+      },
+      "id": "7ff58009-eab1-446f-b1d7-13c67ad3ad83",
+      "name": "Auto-fixing Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "typeVersion": 1,
+      "position": [
+        4928,
+        1184
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "8ef93af4-a109-491e-addf-acc19dbf30d0",
+      "name": "OpenRouter Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        4864,
+        1392
+      ],
+      "credentials": {
+        "openRouterApi": {
+          "id": "dHTFYaGfRO4CcOA2",
+          "name": "SARCH_OPENROUTER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[\"bookingId\",\"reservationId\",\"roomType\",\"guestComment\",\"comment\",\"matchedRequests\",\"inferredMatchedRequests\",\"allowedActions\"],\"properties\":{\"bookingId\":{\"type\":\"string\"},\"reservationId\":{\"type\":\"string\"},\"roomType\":{\"type\":\"string\"},\"guestComment\":{\"type\":\"string\"},\"comment\":{\"type\":[\"string\",\"null\"]},\"matchedRequests\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"minProperties\":1,\"maxProperties\":1,\"additionalProperties\":{\"type\":\"string\",\"minLength\":1}}},\"inferredMatchedRequests\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"minProperties\":1,\"maxProperties\":1,\"additionalProperties\":{\"type\":\"object\",\"required\":[\"attributeType\",\"inferredBy\"],\"properties\":{\"attributeType\":{\"type\":\"string\",\"minLength\":1},\"inferredBy\":{\"type\":\"string\",\"minLength\":1}},\"additionalProperties\":false}}},\"allowedActions\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[\"action\",\"mode\"],\"properties\":{\"action\":{\"type\":\"string\",\"anyOf\":[{\"enum\":[\"Upgrade 1\",\"Upgrade 2\",\"Upgrade 3\",\"Upgrade 4\",\"Upsell\"]},{\"pattern\":\"^Adjacency: [A-Za-z0-9_-]+$\"}]},\"mode\":{\"type\":\"string\",\"enum\":[\"FORCED\",\"OPTIONAL\"]}},\"additionalProperties\":false}}},\"additionalProperties\":false}}"
+      },
+      "id": "9cd42bc1-fa8c-4bee-a6d4-1ed3233157c2",
+      "name": "Structured Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        5088,
+        1392
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// =====================================================================\n// Simulated Annealing — Room Allocation Optimizer (v2)\n//\n// Changes vs. v1:\n//   • Reads BuildConfig once → all weights/caps/flags/legionella threshold\n//     come from there. No more prep1/prep2/prep3.\n//   • Every scored feature is gated on its enabled flag; disabled features\n//     contribute zero (and their math is skipped entirely).\n//   • Priority multipliers were already baked into the weights by\n//     BuildConfig, so this file just consumes them.\n//   • ASB matching now resolves room-number references (\"ASB von 216\")\n//     in addition to reservation/booking IDs, and records unmet ASBs\n//     in diagnostics for the report layer.\n//   • Legionella threshold is configurable (it actually comes pre-baked\n//     in the room rack — this node just respects the flag).\n// =====================================================================\n\nconst SA = {\n  iterations:       20000,\n  startTemp:        200.0,\n  endTemp:          0.3,\n  traceEvery:       300,\n  traceOnAccept:    false,\n  traceMaxEntries:  500,\n};\nconst ALLOW_TOMORROW = true;\n\n// ---------- load config ----------\nconst cfg = $('BuildConfig').first().json;\nif (!cfg) throw new Error(\"Missing BuildConfig output\");\n\nconst W            = cfg.weights ?? {};\nconst FEAT         = cfg.features ?? {};\nconst ranks        = cfg.roomTypeRanks ?? [];\nconst protectedSet = new Set(cfg.protectedSuiteRanks ?? []);\n\nconst ALLOW_OPTIONAL_UPGRADES = cfg.optionalUpgradesAllowed !== false;\nconst UNASSIGNED_PENALTY      = W.unassignedPenalty ?? -250000;\nconst PENALTY_INCOMPATIBLE    = W.hardConstraintPenalty ?? -1000000;\n\n// Feature switches\nconst F = {\n  critical:       FEAT.critical?.enabled       !== false,\n  preference:     FEAT.preference?.enabled     !== false,\n  adjacency:      FEAT.adjacency?.enabled      !== false,\n  groupProximity: FEAT.groupProximity?.enabled !== false,\n  floorPref:      FEAT.floorPreference?.enabled !== false,\n  upgrade:        FEAT.upgrade?.enabled        !== false,\n  eci:            FEAT.eci?.enabled            !== false,\n  asb:            FEAT.asb?.enabled            !== false,\n  legionella:     FEAT.legionella?.enabled     !== false,\n};\n\n// ---------- inputs ----------\nconst reservationsRaw   = $('ArrivalsToday').first()?.json?.reservations ?? [];\nconst availableRooms    = $('AvailableRoomsByScoring').first()?.json?.availableRooms ?? {};\nconst unitAttributesRaw = $('UniqueAttributes').first().json.unitAttributes ?? [];\nconst roomRack          = $('Blocked_AvailToday_Preassigned').first()?.json?.RoomRack ?? [];\nconst maintenanceSlots  = $('Maintenance_Slots').first()?.json?.MaintenanceSlots ?? [];\n\n// AI Agent output → merge per reservation\nconst agentOutputRaw    = $('AI Agent').first()?.json?.output ?? [];\nconst agentMap          = new Map(agentOutputRaw.map(a => [a.reservationId, a]));\n\n// ---------- helpers ----------\nconst toDateOnly = (iso) => iso ? iso.split('T')[0] : null;\n\n// \"Target date\" = today if assigning for today, today+1 if assigning for tomorrow.\n// Every date-relative check (legionella vacancy, rack windows, ECI, feasibility)\n// uses this as the anchor so the workflow can be scheduled the evening before.\nconst ASSIGN_DAY_OFFSET = Number(cfg.assignDayOffset ?? 0);\nfunction addDaysISO(date, n) {\n  const d = new Date(date);\n  d.setUTCDate(d.getUTCDate() + n);\n  return d.toISOString();\n}\nconst todayStr = toDateOnly(addDaysISO(new Date(), ASSIGN_DAY_OFFSET));\n\nfunction floorOf(roomName) {\n  const digits = String(roomName ?? \"\").replace(/\\D/g, \"\");\n  if (!digits || digits.length < 2) return null;\n  return Math.floor(parseInt(digits, 10) / 100);\n}\n\n// ---------- maintenance & rack lookups ----------\nconst maintenanceBlockedRooms = new Set();\nfor (const m of maintenanceSlots) {\n  if (!m.roomId || !m.from || !m.to) continue;\n  const mFrom = toDateOnly(m.from), mTo = toDateOnly(m.to);\n  if (mFrom <= todayStr && mTo >= todayStr) maintenanceBlockedRooms.add(m.roomId);\n}\n\nconst roomRackMap = new Map();\nconst roomRackByName = new Map();           // roomName → rack entry (for ASB room-number lookup)\nfor (const entry of roomRack) {\n  roomRackMap.set(entry.roomId, entry);\n  if (entry.roomName) {\n    const digits = String(entry.roomName).replace(/\\D/g, \"\");\n    if (digits) roomRackByName.set(digits, entry);\n    roomRackByName.set(String(entry.roomName).toLowerCase(), entry);\n  }\n}\n\nfunction isRoomBlockedByRack(roomId, arrivalDate, departureDate) {\n  const entry = roomRackMap.get(roomId);\n  if (!entry) return false;\n  const hasWindow = (entry.availableWindows ?? []).some(w => {\n    const winFrom = w.from;\n    const winTo   = w.openEnded ? '9999-12-31' : w.to;\n    return winFrom <= arrivalDate && winTo >= departureDate;\n  });\n  if (hasWindow) return false;\n  if (entry.openEndedAfter && entry.openEndedAfter <= arrivalDate) return false;\n  return true;\n}\n\n// ---------- attribute names ----------\nconst attrIdToName = new Map(\n  unitAttributesRaw.filter(a => a?.id && a?.name)\n    .map(a => [String(a.id), String(a.name).toLowerCase().trim()])\n);\n\n// ---------- ranks ----------\nconst rankMap = new Map(ranks.filter(r => r?.id).map(r => [r.id, r.rank]));\nconst rankOf  = id => rankMap.has(id) ? rankMap.get(id) : null;\n\n// ---------- flatten rooms ----------\nconst CATEGORIES = [\"available_clean\",\"available_inspect\",\"available_dirty\",\"available_tomorrow\"];\nfunction flattenRooms(obj) {\n  const byId = new Map(), out = [];\n  for (const cat of CATEGORIES) {\n    for (const r of (Array.isArray(obj?.[cat]) ? obj[cat] : [])) {\n      if (!r?.roomId || byId.has(r.roomId)) continue;\n      const room = { ...r, __category: cat };\n      out.push(room); byId.set(r.roomId, room);\n    }\n  }\n  return { rooms: out, roomById: byId };\n}\nconst { rooms: allRooms, roomById } = flattenRooms(availableRooms);\nconst rooms = allRooms.filter(r => !maintenanceBlockedRooms.has(r.roomId));\n\n// ---------- neighbor map (adjacency by same floor + ±1 unit number) ----------\nconst allKnownRoomsForAdjacency = [...allRooms];\nconst allKnownRoomIds = new Set(allRooms.map(r => r.roomId));\nfor (const entry of roomRack) {\n  if (!entry.roomId || allKnownRoomIds.has(entry.roomId)) continue;\n  allKnownRoomsForAdjacency.push({ roomId: entry.roomId, roomName: entry.roomName ?? entry.roomId });\n}\nfunction defaultAreAdjacent(a, b) {\n  if (!a || !b) return false;\n  const na = String(a.roomName ?? \"\").replace(/\\D/g, \"\");\n  const nb = String(b.roomName ?? \"\").replace(/\\D/g, \"\");\n  if (!na || !nb || na.length !== nb.length) return false;\n  const ia = parseInt(na, 10), ib = parseInt(nb, 10);\n  if (isNaN(ia) || isNaN(ib)) return false;\n  return Math.floor(ia/100) === Math.floor(ib/100) && Math.abs(ia-ib) === 1;\n}\nconst neighborMap = new Map();\nfor (const r of allKnownRoomsForAdjacency) neighborMap.set(r.roomId, new Set());\nfor (let i = 0; i < allKnownRoomsForAdjacency.length; i++)\n  for (let j = i+1; j < allKnownRoomsForAdjacency.length; j++)\n    if (defaultAreAdjacent(allKnownRoomsForAdjacency[i], allKnownRoomsForAdjacency[j])) {\n      neighborMap.get(allKnownRoomsForAdjacency[i].roomId).add(allKnownRoomsForAdjacency[j].roomId);\n      neighborMap.get(allKnownRoomsForAdjacency[j].roomId).add(allKnownRoomsForAdjacency[i].roomId);\n    }\n\nfunction distanceSteps(a, b, maxD = 4) {\n  if (!a || !b) return maxD;\n  if (a === b) return 0;\n  const q = [a], seen = new Set([a]); let d = 0;\n  while (q.length && d < maxD) {\n    const n = q.length; d++;\n    for (let i = 0; i < n; i++) {\n      const cur = q.shift();\n      for (const nb of neighborMap.get(cur) || []) {\n        if (nb === b) return d;\n        if (!seen.has(nb)) { seen.add(nb); q.push(nb); }\n      }\n    }\n  }\n  return maxD;\n}\nfunction distKey(d, gradient) {\n  const dk = String(d);\n  if (dk in gradient) return dk;\n  const numKeys = Object.keys(gradient).filter(k => /^\\d+$/.test(k)).map(Number).sort((a,b) => a-b);\n  const plusKey = Object.keys(gradient).find(k => k.endsWith(\"+\"));\n  for (let i = numKeys.length-1; i >= 0; i--)\n    if (d >= numKeys[i]) { const c = String(numKeys[i]); if (c in gradient) return c; }\n  return plusKey ?? dk;\n}\n\n// ---------- inventory & demand ----------\nconst inventoryByType = new Map();\nfor (const r of rooms) {\n  if (!inventoryByType.has(r.unitGroupId)) inventoryByType.set(r.unitGroupId, { total: 0, free: 0 });\n  const e = inventoryByType.get(r.unitGroupId);\n  e.total++;\n  if (!r.isOccupied) e.free++;\n}\nconst demandByType = new Map();\nfor (const r of reservationsRaw)\n  demandByType.set(r.roomType, (demandByType.get(r.roomType) ?? 0) + 1);\n\nfunction classifyUpgrade(toType) {\n  const supply = inventoryByType.get(toType)?.free ?? 0;\n  const demand = demandByType.get(toType) ?? 0;\n  const surplus = supply - demand;\n  if (surplus > 3) return \"good\";\n  if (surplus >= 0) return \"neutral\";\n  return \"bad\";\n}\n\n// ---------- merge AI output into reservations ----------\nconst reservationsWithAgent = reservationsRaw.map(r => {\n  const agent = agentMap.get(r.reservationId) ?? {};\n  return {\n    ...r,\n    matchedRequests:         agent.matchedRequests         ?? [],\n    inferredMatchedRequests: agent.inferredMatchedRequests ?? [],\n    allowedActions:          agent.allowedActions          ?? [],\n  };\n});\nconst resIdSet = new Set(reservationsWithAgent.map(r => r.reservationId));\n\nfunction sanitizeAllowedActions(res) {\n  const out = [], seen = new Set();\n  for (const a of res.allowedActions ?? []) {\n    const { action, mode } = a ?? {};\n    if (!action || (mode !== \"FORCED\" && mode !== \"OPTIONAL\")) continue;\n    const mAdj = action.match(/^Adjacency:\\s*([A-Za-z0-9_-]+)$/);\n    if (mAdj && (!resIdSet.has(mAdj[1]) || mAdj[1] === res.reservationId)) continue;\n    const key = `${action}|${mode}`;\n    if (seen.has(key)) continue;\n    seen.add(key);\n    out.push({ action, mode });\n  }\n  return out;\n}\nconst reservations     = reservationsWithAgent.map(r => ({ ...r, allowedActions: sanitizeAllowedActions(r) }));\nconst reservationsById = new Map(reservations.map(r => [r.reservationId, r]));\n\n// ---------- action extractors ----------\nconst normaliseAttr = s => String(s).toLowerCase().trim();\nfunction resolveMatchedAttr(key, value) {\n  if (attrIdToName.has(key)) return attrIdToName.get(key);\n  return normaliseAttr(String(value));\n}\nfunction requestedAttributes(res) {\n  const critical = [], preference = [];\n  for (const obj of res.matchedRequests ?? []) {\n    const k = obj && Object.keys(obj)[0]; if (!k) continue;\n    const resolved = resolveMatchedAttr(k, obj[k]);\n    if (resolved) critical.push(resolved);\n  }\n  for (const obj of res.inferredMatchedRequests ?? []) {\n    const k = obj && Object.keys(obj)[0];\n    const v = k ? obj[k] : null;\n    if (v?.attributeType) preference.push({\n      name:       normaliseAttr(String(v.attributeType)),\n      inferredBy: String(v.inferredBy ?? \"\")\n    });\n  }\n  return { critical, preference };\n}\nfunction extractUpgrade(res) {\n  let best = null;\n  for (const a of res.allowedActions ?? []) {\n    const m = a.action.match(/^Upgrade\\s+([1-9])$/);\n    if (!m) continue;\n    const lvl = Number(m[1]);\n    if (!best || lvl > best.level) best = { level: lvl, mode: a.mode };\n  }\n  return best;\n}\nfunction extractAdjPairs(res) {\n  const out = [];\n  for (const a of res.allowedActions ?? []) {\n    const m = a.action.match(/^Adjacency:\\s*([A-Za-z0-9_-]+)$/);\n    if (m) out.push({ otherReservationId: m[1], mode: a.mode });\n  }\n  return out;\n}\nconst hasEarlyCheckIn = res => (res.allowedActions ?? []).some(a => a.action === \"EarlyCheckIn\");\nfunction extractASB(res) {\n  for (const a of res.allowedActions ?? []) {\n    const m = a.action.match(/^ASB:\\s*(.+)$/);\n    if (m) return m[1].trim();\n  }\n  return null;\n}\nfunction extractFloorPreference(res) {\n  for (const a of res.allowedActions ?? []) {\n    if (a.action === \"FloorPreference: high\") return \"high\";\n    if (a.action === \"FloorPreference: low\")  return \"low\";\n  }\n  return null;\n}\n\n// ---------- ASB resolver: identifier → roomId ----------\n// Handles three input shapes, in order of confidence:\n//   1. raw reservation/booking id matched against rack reservation history\n//   2. \"von 216\", \"von Zimmer 216\", \"von Room 216\", \"216\" → room number\n//   3. anything else: best-effort substring match\nfunction resolveAsbRoom(identifier) {\n  if (!identifier) return null;\n  const id = String(identifier).trim();\n\n  // (1) reservation/booking id in rack\n  const byResv = roomRack.find(e =>\n    (e.reservations ?? []).some(r =>\n      r.reservationId === id ||\n      r.bookingId === id ||\n      String(r.reservationId ?? \"\").includes(id) ||\n      String(r.bookingId ?? \"\").includes(id)\n    )\n  );\n  if (byResv) return { roomId: byResv.roomId, source: \"reservationOrBookingId\" };\n\n  // (2) room number — extract trailing digit run after optional preposition\n  const numMatch = id.match(/(?:^|[\\s:#])(\\d{2,5})\\s*$/) || id.match(/(\\d{2,5})/);\n  if (numMatch) {\n    const digits = numMatch[1];\n    const entry = roomRackByName.get(digits);\n    if (entry) return { roomId: entry.roomId, source: \"roomNumber\" };\n  }\n\n  // (3) full string match against room name\n  const byName = roomRackByName.get(id.toLowerCase());\n  if (byName) return { roomId: byName.roomId, source: \"roomName\" };\n\n  return null;\n}\n\n// ---------- floor range for normalisation ----------\nconst allFloors = [...new Set(allRooms.map(r => floorOf(r.roomName)).filter(f => f !== null))]\n  .sort((a,b) => a-b);\nconst MIN_FLOOR = allFloors[0] ?? 1;\nconst MAX_FLOOR = allFloors[allFloors.length-1] ?? 1;\n\n// ---------- feasibility ----------\nfunction isFeasibleBase(res, room) {\n  if (!room) return false;\n  if (maintenanceBlockedRooms.has(room.roomId)) return false;\n  const arrivalDate   = toDateOnly(res.arrival)   ?? todayStr;\n  const departureDate = toDateOnly(res.departure) ?? todayStr;\n  if (isRoomBlockedByRack(room.roomId, arrivalDate, departureDate)) return false;\n  const bRank = rankOf(res.roomType), rRank = rankOf(room.unitGroupId);\n  if (bRank === null || rRank === null) return res.roomType === room.unitGroupId;\n  if (rRank < bRank) return false;\n  if (rRank > bRank) {\n    const up = extractUpgrade(res);\n    if (protectedSet.has(rRank) && (!up || up.mode !== \"FORCED\")) return false;\n    if (!ALLOW_OPTIONAL_UPGRADES && (!up || up.mode !== \"FORCED\")) return false;\n  }\n  return true;\n}\nfunction isFeasible(res, room) {\n  if (!isFeasibleBase(res, room)) return false;\n  if (!ALLOW_TOMORROW && room.__category === \"available_tomorrow\") return false;\n  if (F.eci && hasEarlyCheckIn(res)) {\n    if (room.__category === \"available_dirty\" || room.__category === \"available_tomorrow\") return false;\n    if (room.isOccupied) return false;\n  }\n  return true;\n}\nfunction isFeasibleECIFallback(res, room) {\n  if (!ALLOW_TOMORROW && room.__category === \"available_tomorrow\") return false;\n  return isFeasibleBase(res, room);\n}\n\n// ---------- per-room bonus (state + ECI + legionella) ----------\nfunction getAvailabilityBonus(room, res) {\n  let bonus = room.isOccupied\n    ? (W.roomState?.occupied ?? -350)\n    : (W.roomState?.[room.__category?.replace(\"available_\", \"\")] ?? 0);\n  if (F.eci && res && hasEarlyCheckIn(res)) {\n    if (room.__category === \"available_dirty\" || room.isOccupied) {\n      bonus -= (W.eciDirtyExtraPenalty ?? 400);\n    }\n  }\n  if (F.legionella) {\n    const rackEntry = roomRackMap.get(room.roomId);\n    if (rackEntry?.legionellaRisk === true) bonus += (W.legionellaAssignmentBonus ?? 800);\n  }\n  return bonus;\n}\n\nfunction getFloorBonus(res, room) {\n  if (!F.floorPref) return 0;\n  const pref = extractFloorPreference(res);\n  if (!pref) return 0;\n  const floor = floorOf(room.roomName);\n  if (floor === null) return 0;\n  if (MIN_FLOOR === MAX_FLOOR) return 0;\n  const step = W.floorPrefBonusPerStep ?? 15;\n  if (pref === \"high\") return (floor - MIN_FLOOR) * step;\n  return (MAX_FLOOR - floor) * step;\n}\n\nfunction buildUpgradeRationale(bookedType, assignedType, bRank, rRank, explicitUpgrade, baseQuality, effectiveQuality) {\n  const inv = inventoryByType.get(assignedType) ?? { total: 0, free: 0 };\n  const demand = demandByType.get(assignedType) ?? 0;\n  const surplus = inv.free - demand;\n  const tierJump = rRank - bRank;\n  const inventoryLine = surplus > 3\n    ? `${assignedType}: ${inv.total} rooms available, ${inv.free} unoccupied, ${demand} booked at this type (surplus ${surplus}) — spare capacity exists.`\n    : surplus >= 0\n    ? `${assignedType}: ${inv.total} rooms available, ${inv.free} unoccupied, ${demand} booked at this type (surplus ${surplus}) — supply and demand balanced.`\n    : `${assignedType}: ${inv.total} rooms available, ${inv.free} unoccupied, ${demand} booked at this type (surplus ${surplus}) — insufficient capacity.`;\n  const actionLine = explicitUpgrade\n    ? `Upgrade ${explicitUpgrade.level} [${explicitUpgrade.mode}] applied.`\n    : ALLOW_OPTIONAL_UPGRADES ? \"Implicit upgrade — no explicit action.\"\n                              : \"FORCED action — implicit upgrades disabled globally.\";\n  const qualityLine = `Base quality: ${baseQuality}.${baseQuality !== effectiveQuality ? ` Boosted to \"${effectiveQuality}\" by explicit action.` : \"\"}`;\n  return {\n    summary: `Booked ${bookedType} (rank ${bRank}) → assigned ${assignedType} (rank ${rRank}, ${tierJump} tier${tierJump !== 1 ? \"s\" : \"\"} up). Quality \"${effectiveQuality}\".`,\n    bookedType, assignedType, tierJump,\n    inventory: { total: inv.total, free: inv.free, demand, surplus },\n    baseQuality, effectiveQuality,\n    qualityBoostedByAction: baseQuality !== effectiveQuality,\n    explicitAction: explicitUpgrade ? { level: explicitUpgrade.level, mode: explicitUpgrade.mode } : null,\n    explanation: [inventoryLine, actionLine, qualityLine].join(\" \"),\n  };\n}\n\n// ---------- validation ----------\nfunction isValidAssignment(assignMap) {\n  const used = new Set();\n  for (const roomId of assignMap.values()) {\n    if (used.has(roomId)) return false;\n    used.add(roomId);\n  }\n  return true;\n}\n\n// ---------- per-reservation scoring ----------\nfunction scoreReservationWithBreakdown(res, room, assignmentMap) {\n  if (!room) return { score: UNASSIGNED_PENALTY, breakdown: { feasibility: \"UNASSIGNED\", total: UNASSIGNED_PENALTY } };\n  if (!isFeasible(res, room)) return { score: PENALTY_INCOMPATIBLE, breakdown: { feasibility: \"INCOMPATIBLE\", total: PENALTY_INCOMPATIBLE } };\n\n  let score = 0;\n  const bd = {\n    feasibility:     \"OK\",\n    availability:    0,\n    floorPreference: 0,\n    critical:   { requested: [], satisfied: [], unsatisfied: [], score: 0 },\n    preference: { requested: [], satisfied: [], unsatisfied: [], score: 0 },\n    upgrade:    { applied: false, quality: null, hasExplicitAction: false, score: 0, rationale: null },\n    adjacency:  { forced: { score: 0, pairs: [] }, optional: { score: 0, pairs: [] } },\n    flags:      { earlyCheckIn: hasEarlyCheckIn(res), asbIdentifier: extractASB(res), floorPreference: extractFloorPreference(res) },\n    total:      0,\n  };\n\n  bd.availability    = getAvailabilityBonus(room, res); score += bd.availability;\n  bd.floorPreference = getFloorBonus(res, room);        score += bd.floorPreference;\n\n  const attrsNorm = new Set((room.attributes ?? []).map(normaliseAttr));\n  const { critical, preference } = requestedAttributes(res);\n  bd.critical.requested   = [...critical];\n  bd.preference.requested = preference.map(x => ({ attributeType: x.name, inferredBy: x.inferredBy }));\n\n  if (F.critical) {\n    let critScore = 0;\n    for (const a of critical) {\n      if (attrsNorm.has(a)) { bd.critical.satisfied.push(a);   critScore += W.critSat ?? 0; }\n      else                  { bd.critical.unsatisfied.push(a); critScore += W.critUnsat ?? 0; }\n    }\n    critScore = Math.max(critScore, W.critCap ?? -1200);\n    bd.critical.score = critScore;\n    score += critScore;\n  }\n\n  if (F.preference) {\n    let prefScore = 0;\n    for (const p of preference) {\n      if (attrsNorm.has(p.name)) { bd.preference.satisfied.push(p.name);   prefScore += W.prefSat ?? 0; }\n      else                       { bd.preference.unsatisfied.push(p.name); prefScore += W.prefUnsat ?? 0; }\n    }\n    prefScore = Math.max(prefScore, W.prefCap ?? -600);\n    bd.preference.score = prefScore;\n    score += prefScore;\n  }\n\n  if (F.upgrade) {\n    const bRank = rankOf(res.roomType), rRank = rankOf(room.unitGroupId);\n    if (bRank !== null && rRank !== null && rRank > bRank) {\n      const baseQuality     = classifyUpgrade(room.unitGroupId);\n      const explicitUpgrade = extractUpgrade(res);\n      const hasAction       = Boolean(explicitUpgrade);\n      let effectiveQuality  = baseQuality;\n      if (hasAction) {\n        if (baseQuality === \"bad\")     effectiveQuality = \"neutral\";\n        else if (baseQuality === \"neutral\") effectiveQuality = \"good\";\n      }\n      const raw = effectiveQuality === \"good\" ? (W.upgradeGood ?? 0)\n                : effectiveQuality === \"neutral\" ? (W.upgradeNeutral ?? 0)\n                : (W.upgradeBad ?? 0);\n      const cap = W.upgradeCap ?? 200;\n      const upScore = Math.max(Math.min(raw, cap), -cap);\n      bd.upgrade = {\n        applied: true, quality: effectiveQuality, baseQuality,\n        hasExplicitAction: hasAction, mode: explicitUpgrade?.mode ?? null,\n        score: upScore,\n        rationale: buildUpgradeRationale(res.roomType, room.unitGroupId, bRank, rRank, explicitUpgrade, baseQuality, effectiveQuality),\n      };\n      score += upScore;\n    }\n  }\n\n  if (F.adjacency) {\n    const pairs = extractAdjPairs(res);\n    let forcedTotal = 0, optTotal = 0;\n    for (const p of pairs) {\n      const otherRoomId = assignmentMap.get(p.otherReservationId) ?? null;\n      const d = otherRoomId ? distanceSteps(room.roomId, otherRoomId) : 4;\n      const gradient = p.mode === \"FORCED\" ? W.adjForcedByDist : W.adjOptByDist;\n      const adjScore = gradient?.[distKey(d, gradient ?? {})] ?? 0;\n      const entry = { otherReservationId: p.otherReservationId, otherRoomId, distance: d, score: adjScore };\n      if (p.mode === \"FORCED\") { bd.adjacency.forced.pairs.push(entry);   forcedTotal += adjScore; }\n      else                     { bd.adjacency.optional.pairs.push(entry); optTotal    += adjScore; }\n    }\n    const fCap = W.adjForcedCap ?? 1600, oCap = W.adjOptCap ?? 600;\n    forcedTotal = Math.max(Math.min(forcedTotal, fCap), -fCap);\n    optTotal    = Math.max(Math.min(optTotal,    oCap), -oCap);\n    bd.adjacency.forced.score   = forcedTotal;\n    bd.adjacency.optional.score = optTotal;\n    score += forcedTotal + optTotal;\n  }\n\n  bd.total = score;\n  return { score, breakdown: bd };\n}\n\nfunction scoreGlobalWithBreakdown(assignmentMap) {\n  let score = 0;\n  const bd = { allForcedAdjBonusApplied: false, allForcedAdjBonus: 0, groupFullyClusteredBonus: 0, bookingGroupProximity: 0, total: 0 };\n\n  if (F.adjacency) {\n    let forcedTotal = 0, forcedSat = 0;\n    for (const res of reservations) {\n      const myRoomId = assignmentMap.get(res.reservationId); if (!myRoomId) continue;\n      for (const p of extractAdjPairs(res)) {\n        if (p.mode !== \"FORCED\") continue;\n        forcedTotal++;\n        const otherRoomId = assignmentMap.get(p.otherReservationId);\n        if (otherRoomId && distanceSteps(myRoomId, otherRoomId) === 1) forcedSat++;\n      }\n    }\n    if (forcedTotal > 0 && forcedSat === forcedTotal) {\n      bd.allForcedAdjBonusApplied = true;\n      bd.allForcedAdjBonus = W.allForcedAdjBonus ?? 0;\n      score += bd.allForcedAdjBonus;\n    }\n  }\n\n  if (F.groupProximity) {\n    const byBooking = new Map();\n    for (const r of reservations) {\n      if (!byBooking.has(r.bookingId)) byBooking.set(r.bookingId, []);\n      byBooking.get(r.bookingId).push(r.reservationId);\n    }\n    let prox = 0, clusterBonus = 0;\n    for (const [, ids] of byBooking) {\n      if (ids.length < 2) continue;\n      const roomIds = ids.map(id => assignmentMap.get(id)).filter(Boolean);\n      if (roomIds.length < ids.length) continue;\n      let maxDist = 0;\n      for (let i = 0; i < roomIds.length; i++) for (let j = i+1; j < roomIds.length; j++) {\n        const d = distanceSteps(roomIds[i], roomIds[j]);\n        prox += W.bookProxByDist?.[distKey(d, W.bookProxByDist ?? {})] ?? 0;\n        if (d > maxDist) maxDist = d;\n      }\n      if (maxDist <= 2) clusterBonus += (W.groupClusterBonus ?? 0);\n    }\n    prox = Math.min(prox, W.bookProxCapGlobal ?? 1600);\n    bd.bookingGroupProximity = prox;\n    bd.groupFullyClusteredBonus = clusterBonus;\n    score += prox + clusterBonus;\n  }\n\n  bd.total = score;\n  return { score, breakdown: bd };\n}\n\n// ---------- PRE-ASSIGNMENT STEP 1: LEGIONELLA ----------\nconst preAssignedReservations = new Set();\nconst preAssignedRooms        = new Set();\nconst preAssignments          = new Map();\nconst unmetAsbs               = [];   // [{reservationId, identifier, reason}]\n\nif (F.legionella) {\n  const legionellaRooms = roomRack.filter(e => e.legionellaRisk === true);\n  for (const legRoom of legionellaRooms) {\n    const room = roomById.get(legRoom.roomId);\n    if (!room || maintenanceBlockedRooms.has(room.roomId)) continue;\n    const candidate = reservations.find(res =>\n      !preAssignedReservations.has(res.reservationId) &&\n      res.roomType === room.unitGroupId &&\n      isFeasibleBase(res, room)\n    );\n    if (candidate) {\n      preAssignments.set(candidate.reservationId, room.roomId);\n      preAssignedReservations.add(candidate.reservationId);\n      preAssignedRooms.add(room.roomId);\n    }\n  }\n}\n\n// ---------- PRE-ASSIGNMENT STEP 2: ASB ----------\nif (F.asb) {\n  for (const res of reservations) {\n    if (preAssignedReservations.has(res.reservationId)) continue;\n    const asbId = extractASB(res);\n    if (!asbId) continue;\n\n    const resolved = resolveAsbRoom(asbId);\n    if (!resolved) {\n      unmetAsbs.push({ reservationId: res.reservationId, identifier: asbId, reason: \"Identifier did not match any room (number / reservation / booking).\" });\n      continue;\n    }\n    const room = roomById.get(resolved.roomId);\n    if (!room) {\n      unmetAsbs.push({ reservationId: res.reservationId, identifier: asbId, reason: `Room ${resolved.roomId} not in today's available pool.` });\n      continue;\n    }\n    if (preAssignedRooms.has(room.roomId)) {\n      unmetAsbs.push({ reservationId: res.reservationId, identifier: asbId, reason: `Room ${room.roomName} already locked by another pre-assignment (legionella or earlier ASB).` });\n      continue;\n    }\n    if (maintenanceBlockedRooms.has(room.roomId)) {\n      unmetAsbs.push({ reservationId: res.reservationId, identifier: asbId, reason: `Room ${room.roomName} blocked for maintenance.` });\n      continue;\n    }\n    if (!isFeasibleBase(res, room)) {\n      unmetAsbs.push({ reservationId: res.reservationId, identifier: asbId, reason: `Room ${room.roomName} not feasible (room type / rank / blocking window).` });\n      continue;\n    }\n    preAssignments.set(res.reservationId, room.roomId);\n    preAssignedReservations.add(res.reservationId);\n    preAssignedRooms.add(room.roomId);\n  }\n}\n\n// ---------- SA-scoped reservations & rooms ----------\nconst saReservations = reservations.filter(r => !preAssignedReservations.has(r.reservationId));\nconst saRooms        = rooms.filter(r => !preAssignedRooms.has(r.roomId));\n\n// ---------- total score ----------\nfunction totalScore(assignMap) {\n  const fullMap = new Map([...preAssignments, ...assignMap]);\n  let s = 0;\n  for (const res of reservations) {\n    const roomId = fullMap.get(res.reservationId);\n    const room   = roomId ? roomById.get(roomId) : null;\n    s += scoreReservationWithBreakdown(res, room, fullMap).score;\n  }\n  s += scoreGlobalWithBreakdown(fullMap).score;\n  return s;\n}\n\n// ---------- greedy init ----------\nfunction greedyInit() {\n  const items = saReservations.map(r => {\n    const eci      = F.eci && hasEarlyCheckIn(r);\n    const feasible = saRooms.filter(rm => isFeasible(r, rm));\n    const effectiveFeasible = (eci && feasible.length === 0)\n      ? saRooms.filter(rm => isFeasibleECIFallback(r, rm))\n      : feasible;\n    const { critical, preference } = requestedAttributes(r);\n    return { res: r, feasible: effectiveFeasible, eci, priority: critical.length*2 + preference.length };\n  }).sort((a, b) => {\n    if (a.eci !== b.eci) return a.eci ? -1 : 1;\n    return (a.feasible.length - b.feasible.length) || (b.priority - a.priority);\n  });\n\n  const assign = new Map(), used = new Set();\n  for (const { res, feasible } of items) {\n    const candidates = feasible.filter(r => !used.has(r.roomId));\n    candidates.sort((a, b) => {\n      const bkRank = rankOf(res.roomType) ?? 0;\n      const aUpg   = (rankOf(a.unitGroupId) ?? 0) - bkRank;\n      const bUpg   = (rankOf(b.unitGroupId) ?? 0) - bkRank;\n      if (aUpg !== bUpg) return aUpg - bUpg;\n      const aBonus = getAvailabilityBonus(a, res) + getFloorBonus(res, a);\n      const bBonus = getAvailabilityBonus(b, res) + getFloorBonus(res, b);\n      return bBonus - aBonus;\n    });\n    const contextMap = new Map([...preAssignments, ...assign]);\n    let bestId = null, bestSc = -Infinity;\n    for (const room of candidates.slice(0, 30)) {\n      const tmp = new Map(contextMap); tmp.set(res.reservationId, room.roomId);\n      const sc = scoreReservationWithBreakdown(res, room, tmp).score;\n      if (sc > bestSc) { bestSc = sc; bestId = room.roomId; }\n    }\n    if (bestId) { assign.set(res.reservationId, bestId); used.add(bestId); }\n  }\n  return assign;\n}\n\n// ---------- SA moves ----------\nconst randInt = n => Math.floor(Math.random()*n);\nfunction proposeMove(resIds) {\n  const p = Math.random();\n  if (p < 0.55 && resIds.length >= 2) {\n    const a = resIds[randInt(resIds.length)];\n    let b = resIds[randInt(resIds.length)];\n    if (b === a) b = resIds[(resIds.indexOf(a)+1) % resIds.length];\n    return { type: \"swap\", a, b };\n  }\n  if (p < 0.85) return { type: \"reassign\", a: resIds[randInt(resIds.length)] };\n  if (resIds.length >= 3) {\n    const a = resIds[randInt(resIds.length)];\n    let b = resIds[randInt(resIds.length)];\n    let c = resIds[randInt(resIds.length)];\n    if (b === a) b = resIds[(resIds.indexOf(a)+1) % resIds.length];\n    if (c === a || c === b) c = resIds[(resIds.indexOf(b)+1) % resIds.length];\n    return { type: \"cycle3\", a, b, c };\n  }\n  return { type: \"reassign\", a: resIds[randInt(resIds.length)] };\n}\nfunction applyMove(move, current) {\n  const next = new Map(current);\n  if (move.type === \"swap\") {\n    const aRoom = next.get(move.a), bRoom = next.get(move.b);\n    if (!aRoom || !bRoom) return current;\n    const ra = reservationsById.get(move.a), rb = reservationsById.get(move.b);\n    if (!ra || !rb) return current;\n    if (!isFeasible(ra, roomById.get(bRoom)) || !isFeasible(rb, roomById.get(aRoom))) return current;\n    next.set(move.a, bRoom); next.set(move.b, aRoom);\n    return isValidAssignment(next) ? next : current;\n  }\n  if (move.type === \"cycle3\") {\n    const aR = next.get(move.a), bR = next.get(move.b), cR = next.get(move.c);\n    if (!aR || !bR || !cR) return current;\n    const ra = reservationsById.get(move.a), rb = reservationsById.get(move.b), rc = reservationsById.get(move.c);\n    if (!ra || !rb || !rc) return current;\n    if (!isFeasible(ra, roomById.get(bR)) || !isFeasible(rb, roomById.get(cR)) || !isFeasible(rc, roomById.get(aR))) return current;\n    next.set(move.a, bR); next.set(move.b, cR); next.set(move.c, aR);\n    return isValidAssignment(next) ? next : current;\n  }\n  const res = reservationsById.get(move.a);\n  if (!res) return current;\n  const oldRoom = next.get(move.a) ?? null;\n  next.delete(move.a);\n  const used = new Set(next.values());\n  const { critical, preference } = requestedAttributes(res);\n  const bkRank = rankOf(res.roomType) ?? 0;\n  const candidates = saRooms\n    .filter(r => !used.has(r.roomId) && isFeasible(res, r))\n    .sort((r1, r2) => {\n      const s1 = new Set((r1.attributes ?? []).map(normaliseAttr));\n      const s2 = new Set((r2.attributes ?? []).map(normaliseAttr));\n      const m1 = critical.reduce((s,a) => s+(s1.has(a)?2:0), 0)\n               + preference.reduce((s,p) => s+(s1.has(p.name)?1:0), 0);\n      const m2 = critical.reduce((s,a) => s+(s2.has(a)?2:0), 0)\n               + preference.reduce((s,p) => s+(s2.has(p.name)?1:0), 0);\n      if (m1 !== m2) return m2 - m1;\n      const u1 = (rankOf(r1.unitGroupId) ?? 0) - bkRank;\n      const u2 = (rankOf(r2.unitGroupId) ?? 0) - bkRank;\n      if (u1 !== u2) return u1 - u2;\n      const b1 = getAvailabilityBonus(r1, res) + getFloorBonus(res, r1);\n      const b2 = getAvailabilityBonus(r2, res) + getFloorBonus(res, r2);\n      return b2 - b1;\n    });\n  if (candidates.length > 0) {\n    next.set(move.a, candidates[randInt(Math.min(5, candidates.length))].roomId);\n  } else if (oldRoom) {\n    next.set(move.a, oldRoom);\n  }\n  return isValidAssignment(next) ? next : current;\n}\n\n// ---------- SA main ----------\nfunction simulatedAnnealing() {\n  const resIds = saReservations.map(r => r.reservationId);\n  if (resIds.length === 0) return { best: new Map(), bestScore: 0, trace: [] };\n  let current      = greedyInit();\n  let currentScore = totalScore(current);\n  let best         = new Map(current), bestScore = currentScore;\n  const trace      = [{ iter: 0, currentScore, bestScore }];\n  for (let t = 1; t <= SA.iterations; t++) {\n    const frac = t/SA.iterations;\n    const temp = SA.startTemp*Math.pow(SA.endTemp/SA.startTemp, frac);\n    const move = proposeMove(resIds);\n    const cand = applyMove(move, current);\n    const candScore = totalScore(cand);\n    const delta     = candScore - currentScore;\n    const accept    = delta >= 0 || Math.random() < Math.exp(delta/Math.max(1e-9, temp));\n    if (accept) { current = cand; currentScore = candScore; }\n    if (candScore > bestScore) { best = new Map(cand); bestScore = candScore; }\n    const shouldTrace = (t % SA.traceEvery === 0) || (candScore > bestScore);\n    if (shouldTrace && trace.length < SA.traceMaxEntries)\n      trace.push({ iter: t, temp: +temp.toFixed(3), currentScore, bestScore, moveType: move.type, accepted: accept });\n  }\n  return { best, bestScore, trace };\n}\n\n// ---------- output builders ----------\nfunction buildReservationReport(res, fullAssignmentMap) {\n  const roomId = fullAssignmentMap.get(res.reservationId) ?? null;\n  const room   = roomId ? roomById.get(roomId) : null;\n  const { score, breakdown } = scoreReservationWithBreakdown(res, room, fullAssignmentMap);\n  const asb = extractASB(res);\n  return {\n    bookingId:      res.bookingId,\n    reservationId:  res.reservationId,\n    roomTypeBooked: res.roomType,\n    guestComment:   res.guestComment,\n    comment:        res.comment,\n    aiRequests: {\n      matchedRequests:         res.matchedRequests ?? [],\n      inferredMatchedRequests: res.inferredMatchedRequests ?? [],\n      allowedActions:          res.allowedActions ?? [],\n    },\n    preAssigned: preAssignments.has(res.reservationId)\n      ? { reason: asb ? \"ASB\" : \"Legionella\", roomId: preAssignments.get(res.reservationId) } : null,\n    asbRequested:  asb,\n    asbResolved:   asb ? resolveAsbRoom(asb) : null,\n    assignment: room ? {\n      roomId:      room.roomId,\n      roomName:    room.roomName,\n      floor:       floorOf(room.roomName),\n      unitGroupId: room.unitGroupId,\n      category:    room.__category,\n      condition:   room.condition,\n      isOccupied:  room.isOccupied,\n      attributes:  room.attributes ?? [],\n      roomRank:    rankOf(room.unitGroupId),\n      bookedRank:  rankOf(res.roomType),\n      isUpgrade:   (rankOf(room.unitGroupId) ?? -Infinity) > (rankOf(res.roomType) ?? Infinity),\n    } : null,\n    reservationScore: score,\n    breakdown,\n  };\n}\nfunction buildRoomReport(roomId, fullAssignmentMap) {\n  const room = roomById.get(roomId); if (!room) return null;\n  return {\n    roomId:      room.roomId,\n    roomName:    room.roomName,\n    floor:       floorOf(room.roomName),\n    unitGroupId: room.unitGroupId,\n    category:    room.__category,\n    condition:   room.condition,\n    isOccupied:  room.isOccupied,\n    attributes:  room.attributes ?? [],\n    assignedTo:  reservations.filter(r => fullAssignmentMap.get(r.reservationId) === roomId).map(r => r.reservationId),\n  };\n}\n\n// ---------- feasibility diagnostic ----------\nconst feasibilityReport = reservations.map(res => {\n  const arrivalDate   = toDateOnly(res.arrival)   ?? todayStr;\n  const departureDate = toDateOnly(res.departure) ?? todayStr;\n  const feasible      = saRooms.filter(r => isFeasible(res, r));\n  return {\n    reservationId:    res.reservationId,\n    roomType:         res.roomType,\n    arrival:          arrivalDate,\n    departure:        departureDate,\n    flags: {\n      earlyCheckIn:    hasEarlyCheckIn(res),\n      asbIdentifier:   extractASB(res),\n      floorPreference: extractFloorPreference(res),\n      preAssigned:     preAssignments.has(res.reservationId),\n    },\n    totalFeasible:    feasible.length,\n    feasibleRooms:    feasible.map(r => r.roomName),\n  };\n});\n\n// ---------- run ----------\nconst { best, bestScore, trace } = simulatedAnnealing();\nconst finalAssignments = new Map([...preAssignments, ...best]);\n\nconst reservationReports = reservations.map(r => buildReservationReport(r, finalAssignments));\nconst usedRoomIds        = Array.from(new Set(finalAssignments.values()));\nconst roomReports        = usedRoomIds.map(rid => buildRoomReport(rid, finalAssignments)).filter(Boolean);\nconst global             = scoreGlobalWithBreakdown(finalAssignments);\nconst unassigned         = reservationReports.filter(r => !r.assignment).map(r => r.reservationId);\n\nconst legionellaUnresolved = F.legionella\n  ? roomRack.filter(e => e.legionellaRisk === true && !preAssignedRooms.has(e.roomId) && roomById.has(e.roomId))\n            .map(e => ({ roomId: e.roomId, roomName: e.roomName, daysVacant: e.daysVacantSinceCheckout }))\n  : [];\n\nreturn [{\n  json: {\n    totalScore:           bestScore,\n    globalScore:          global.score,\n    globalScoreBreakdown: global.breakdown,\n    reservations:         reservationReports,\n    rooms:                roomReports,\n    trace,\n    config: {\n      features:                FEAT,\n      optionalUpgradesAllowed: ALLOW_OPTIONAL_UPGRADES,\n      legionellaMaxDays:       cfg.legionellaMaxDays,\n      decayExp:                cfg.decayExp,\n      propertyId:              cfg.propertyId,\n      assignForDay:            cfg.assignForDay,\n      targetDate:              todayStr,\n    },\n    diagnostics: {\n      roomsTotal:              saRooms.length,\n      roomsExcludedMaint:      allRooms.length - rooms.length,\n      maintenanceBlocked:      Array.from(maintenanceBlockedRooms),\n      reservationsTotal:       reservations.length,\n      preAssignedCount:        preAssignments.size,\n      preAssignedReservations: Array.from(preAssignments.entries()).map(([resId, roomId]) => ({\n        reservationId: resId,\n        roomId,\n        reason: extractASB(reservationsById.get(resId)) ? \"ASB\" : \"Legionella\",\n      })),\n      legionellaUnresolved,\n      unmetAsbs,\n      unassignedCount:         unassigned.length,\n      unassigned,\n      allowTomorrow:           ALLOW_TOMORROW,\n      allowOptionalUpgrades:   ALLOW_OPTIONAL_UPGRADES,\n      floorRange:              { min: MIN_FLOOR, max: MAX_FLOOR },\n      inventoryByType:         Object.fromEntries(inventoryByType),\n      demandByType:            Object.fromEntries(demandByType),\n      feasibilityReport,\n    },\n  },\n}];"
+      },
+      "id": "ca0148bb-4fa1-4980-ab24-ee97bcf7c79a",
+      "name": "Simulated Annealing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5456,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst reservations = data.reservations;\nconst global = data.globalScoreBreakdown ?? {};\nconst totalScore = data.totalScore;\nconst diag = data.diagnostics ?? {};\nconst cfg  = data.config ?? {};\n\n// Optional-upgrade flag now comes from the config object emitted by SA.\nconst optionalUpgradeAllowed = cfg.optionalUpgradesAllowed !== false;\n\n// -------------------- helpers --------------------\nfunction esc(str) {\n  if (str === null || str === undefined) return \"—\";\n  return String(str)\n    .replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\")\n    .replace(/>/g, \"&gt;\").replace(/\"/g, \"&quot;\");\n}\nfunction na(val) { return (val === null || val === undefined || val === \"\") ? \"—\" : val; }\nfunction badge(text, bg, color) {\n  color = color || \"#ffffff\";\n  return `<span style=\"display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.5px;background:${bg};color:${color};font-family:Arial,sans-serif;\">${esc(text)}</span>`;\n}\nfunction statusBadge(feasibility) {\n  if (feasibility === \"OK\")           return badge(\"ASSIGNED\",     \"#1a7a4a\");\n  if (feasibility === \"UNASSIGNED\")   return badge(\"UNASSIGNED\",   \"#c0392b\");\n  if (feasibility === \"INCOMPATIBLE\") return badge(\"INCOMPATIBLE\", \"#7d3c98\");\n  return badge(feasibility, \"#888888\");\n}\nfunction scorePill(score) {\n  const s = Number(score);\n  const bg = s > 0 ? \"#e8f5e9\" : s < -500 ? \"#fdecea\" : \"#fff8e1\";\n  const color = s > 0 ? \"#1a7a4a\" : s < -500 ? \"#c0392b\" : \"#7d6608\";\n  return `<span style=\"display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:${bg};color:${color};font-family:Arial,sans-serif;\">${s >= 0 ? \"+\" : \"\"}${s}</span>`;\n}\nfunction formatMatchedRequests(matched) {\n  if (!matched || matched.length === 0) return '<span style=\"color:#999;font-style:italic;\">None</span>';\n  return matched.map(obj => {\n    const key = Object.keys(obj)[0];\n    return `<span style=\"background:#e3f2fd;color:#1565c0;padding:2px 7px;border-radius:3px;font-size:12px;margin-right:4px;display:inline-block;\">${esc(obj[key])}</span>`;\n  }).join(\" \");\n}\nfunction formatInferredRequests(inferred) {\n  if (!inferred || inferred.length === 0) return '<span style=\"color:#999;font-style:italic;\">None</span>';\n  return inferred.map(obj => {\n    const key = Object.keys(obj)[0];\n    const val = obj[key];\n    return `<span style=\"background:#f3e5f5;color:#6a1b9a;padding:2px 7px;border-radius:3px;font-size:12px;margin-right:4px;display:inline-block;\">${esc(val.attributeType)} <span style=\"opacity:0.7;font-size:11px;\">from \"${esc(val.inferredBy)}\"</span></span>`;\n  }).join(\" \");\n}\nfunction formatActions(actions) {\n  if (!actions || actions.length === 0) return '<span style=\"color:#999;font-style:italic;\">None</span>';\n  return actions.map(a => {\n    const bg = a.mode === \"FORCED\" ? \"#fdecea\" : \"#fff8e1\";\n    const color = a.mode === \"FORCED\" ? \"#c0392b\" : \"#7d6608\";\n    return `<span style=\"background:${bg};color:${color};padding:2px 7px;border-radius:3px;font-size:12px;margin-right:4px;display:inline-block;font-weight:600;\">${esc(a.action)} <span style=\"font-weight:400;font-size:11px;\">[${esc(a.mode)}]</span></span>`;\n  }).join(\" \");\n}\nfunction formatAttrList(list, color, bg) {\n  if (!list || list.length === 0) return '<span style=\"color:#999;font-style:italic;\">None</span>';\n  return list.map(a => {\n    const text = typeof a === \"object\" ? (a.attributeType ?? a.name ?? JSON.stringify(a)) : a;\n    return `<span style=\"background:${bg};color:${color};padding:2px 7px;border-radius:3px;font-size:12px;margin-right:3px;display:inline-block;\">${esc(text)}</span>`;\n  }).join(\" \");\n}\nfunction formatRoomAttrs(attrs) {\n  if (!attrs || attrs.length === 0) return '<span style=\"color:#999;font-style:italic;\">None</span>';\n  return attrs.map(a => `<span style=\"background:#f5f5f5;color:#333;border:1px solid #ddd;padding:2px 7px;border-radius:3px;font-size:12px;margin-right:3px;display:inline-block;\">${esc(a)}</span>`).join(\" \");\n}\nfunction row(label, value, altBg) {\n  const bg = altBg ? \"#fafafa\" : \"#ffffff\";\n  return `<tr style=\"background:${bg};\">\n    <td style=\"padding:8px 14px;width:180px;color:#666;font-size:13px;font-family:Arial,sans-serif;vertical-align:top;white-space:nowrap;border-bottom:1px solid #f0f0f0;\">${label}</td>\n    <td style=\"padding:8px 14px;font-size:13px;font-family:Arial,sans-serif;color:#222;vertical-align:top;border-bottom:1px solid #f0f0f0;\">${value}</td>\n  </tr>`;\n}\nfunction sectionHeader(title, icon) {\n  return `<tr><td colspan=\"2\" style=\"padding:10px 14px 6px 14px;background:#f7f8fa;border-top:2px solid #e8eaed;border-bottom:1px solid #e8eaed;\">\n    <span style=\"font-size:11px;font-weight:700;letter-spacing:1px;color:#555;font-family:Arial,sans-serif;text-transform:uppercase;\">${icon}&nbsp;&nbsp;${title}</span>\n  </td></tr>`;\n}\nfunction adjacencyRows(pairs, label) {\n  if (!pairs || pairs.length === 0) return \"\";\n  const rows = pairs.map(p => {\n    const d = p.distance;\n    const status = d <= 1 ? \"✅ Adjacent\" : d <= 2 ? \"🟡 Close\" : \"❌ Far\";\n    const distLabel = (d === null || d === undefined) ? \"other unassigned\" : `${d} step${d !== 1 ? \"s\" : \"\"}`;\n    return `<tr>\n      <td style=\"padding:4px 8px;font-size:12px;border:1px solid #e0e0e0;\">${esc(p.otherReservationId)}</td>\n      <td style=\"padding:4px 8px;font-size:12px;border:1px solid #e0e0e0;\">${esc(p.otherRoomId ?? \"—\")}</td>\n      <td style=\"padding:4px 8px;font-size:12px;border:1px solid #e0e0e0;text-align:center;\">${distLabel}</td>\n      <td style=\"padding:4px 8px;font-size:12px;border:1px solid #e0e0e0;\">${status}</td>\n      <td style=\"padding:4px 8px;font-size:12px;border:1px solid #e0e0e0;text-align:right;\">${scorePill(p.score)}</td>\n    </tr>`;\n  }).join(\"\");\n  return `<tr><td colspan=\"2\" style=\"padding:6px 14px 10px 14px;\">\n    <div style=\"font-size:12px;font-weight:700;color:#555;font-family:Arial,sans-serif;margin-bottom:5px;\">${label}</div>\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;border:1px solid #e0e0e0;\">\n      <tr style=\"background:#f5f5f5;\">\n        <th style=\"padding:5px 8px;font-size:11px;text-align:left;border:1px solid #e0e0e0;\">Other Reservation</th>\n        <th style=\"padding:5px 8px;font-size:11px;text-align:left;border:1px solid #e0e0e0;\">Other Room</th>\n        <th style=\"padding:5px 8px;font-size:11px;text-align:center;border:1px solid #e0e0e0;\">Distance</th>\n        <th style=\"padding:5px 8px;font-size:11px;text-align:left;border:1px solid #e0e0e0;\">Status</th>\n        <th style=\"padding:5px 8px;font-size:11px;text-align:right;border:1px solid #e0e0e0;\">Score</th>\n      </tr>${rows}\n    </table>\n  </td></tr>`;\n}\n\n// -------------------- reservation card --------------------\nfunction reservationCard(res, index) {\n  const bd = res.breakdown ?? {};\n  const asgn = res.assignment;\n  const isOk = bd.feasibility === \"OK\";\n  const headerBg = !asgn ? \"#fdecea\" : \"#f0faf5\";\n  const headerBorder = !asgn ? \"#e74c3c\" : \"#27ae60\";\n\n  let rows = \"\";\n  rows += sectionHeader(\"Guest Input\", \"💬\");\n  rows += row(\"Comment\", esc(na(res.comment)), false);\n  rows += row(\"Guest Comment\", `<em style=\"color:#555;\">${esc(na(res.guestComment))}</em>`, true);\n  rows += row(\"Room Type Booked\", `<strong>${esc(na(res.roomTypeBooked))}</strong>`, false);\n\n  rows += sectionHeader(\"AI Interpretation\", \"🤖\");\n  rows += row(\"Matched Requests\", formatMatchedRequests(res.aiRequests?.matchedRequests), false);\n  rows += row(\"Inferred Requests\", formatInferredRequests(res.aiRequests?.inferredMatchedRequests), true);\n  rows += row(\"Allowed Actions\", formatActions(res.aiRequests?.allowedActions), false);\n\n  if (res.asbRequested) {\n    const resolved = res.asbResolved;\n    const note = resolved\n      ? `Resolved via ${resolved.source} → ${asgn?.roomName ?? resolved.roomId}`\n      : '<span style=\"color:#c0392b;font-weight:700;\">⚠ Could not be resolved — surfaced under \"Unmet ASBs\" below.</span>';\n    rows += row(\"ASB request\", `<code>${esc(res.asbRequested)}</code> — ${note}`, true);\n  }\n\n  rows += sectionHeader(\"Assignment\", \"🏨\");\n  if (!asgn) {\n    rows += row(\"Status\", '<span style=\"color:#c0392b;font-weight:700;\">⚠️ Could not be assigned to any room</span>', false);\n  } else {\n    rows += row(\"Room\", `<strong>${esc(asgn.roomName)}</strong> <span style=\"color:#888;font-size:12px;\">(${esc(asgn.roomId)})</span>`, false);\n    rows += row(\"Type Assigned\", `<strong>${esc(asgn.unitGroupId)}</strong>`, true);\n    rows += row(\"Upgrade\", asgn.isUpgrade\n      ? `✅ Yes — rank ${esc(asgn.bookedRank)} → rank ${esc(asgn.roomRank)}`\n      : \"❌ No\", false);\n    rows += row(\"Availability\", esc(asgn.category?.replace(\"available_\", \"\").replace(\"_\", \" \") ?? \"—\"), true);\n    rows += row(\"Condition\", esc(asgn.condition ?? \"—\"), false);\n    rows += row(\"Occupied at check-in\", asgn.isOccupied ? \"⚠️ Yes — B2B Reservation, check-out today, new check-in arriving today\" : \"✅ No\", true);\n    rows += row(\"Room Attributes\", formatRoomAttrs(asgn.attributes), false);\n  }\n\n  if (isOk) {\n    rows += sectionHeader(\"Attribute Matching\", \"🎯\");\n    const hasCrit = (bd.critical?.requested?.length ?? 0) > 0;\n    const hasPref = (bd.preference?.requested?.length ?? 0) > 0;\n    if (hasCrit) {\n      rows += row(\"Critical Requested\", formatAttrList(bd.critical.requested, \"#1565c0\", \"#e3f2fd\"), false);\n      rows += row(\"Critical Satisfied\", formatAttrList(bd.critical.satisfied, \"#1a7a4a\", \"#e8f5e9\"), true);\n      rows += row(\"Critical Unsatisfied\", bd.critical.unsatisfied.length > 0 ? formatAttrList(bd.critical.unsatisfied, \"#c0392b\", \"#fdecea\") : '<span style=\"color:#1a7a4a;\">All satisfied ✅</span>', false);\n      rows += row(\"Critical Score\", scorePill(bd.critical.score), true);\n    } else {\n      rows += row(\"Critical Requests\", '<span style=\"color:#999;font-style:italic;\">None</span>', false);\n    }\n    if (hasPref) {\n      rows += row(\"Preference Requested\", formatAttrList(bd.preference.requested.map(r => r.attributeType ?? r), \"#6a1b9a\", \"#f3e5f5\"), !hasCrit);\n      rows += row(\"Preference Satisfied\", formatAttrList(bd.preference.satisfied, \"#1a7a4a\", \"#e8f5e9\"), hasCrit);\n      rows += row(\"Preference Unsatisfied\", bd.preference.unsatisfied.length > 0 ? formatAttrList(bd.preference.unsatisfied, \"#c0392b\", \"#fdecea\") : '<span style=\"color:#1a7a4a;\">All satisfied ✅</span>', !hasCrit);\n      rows += row(\"Preference Score\", scorePill(bd.preference.score), hasCrit);\n    } else {\n      rows += row(\"Preference Requests\", '<span style=\"color:#999;font-style:italic;\">None</span>', hasCrit);\n    }\n\n    rows += sectionHeader(\"Upgrade\", \"⬆️\");\n    if (bd.upgrade?.applied) {\n      rows += row(\"Applied\", \"✅ Yes\", false);\n      rows += row(\"Explicit Action\", bd.upgrade.hasExplicitAction ? `✅ Yes [${esc(bd.upgrade.mode)}]` : \"❌ No — implicit upgrade\", true);\n      rows += row(\"Base Quality\", esc(na(bd.upgrade.baseQuality)), false);\n      rows += row(\"Effective Quality\", esc(na(bd.upgrade.quality)), true);\n      rows += row(\"Upgrade Score\", scorePill(bd.upgrade.score), false);\n      if (bd.upgrade?.rationale) {\n        const r = bd.upgrade.rationale;\n        const summary = typeof r === \"string\" ? r : (r.summary ?? r.explanation ?? \"\");\n        rows += row(\"Rationale\", `<em style=\"color:#555;\">${esc(summary)}</em>`, true);\n      }\n    } else {\n      rows += row(\"Applied\", \"❌ No — same tier assignment\", false);\n    }\n\n    const forcedPairs   = bd.adjacency?.forced?.pairs   ?? [];\n    const optionalPairs = bd.adjacency?.optional?.pairs ?? [];\n    if (forcedPairs.length > 0 || optionalPairs.length > 0) {\n      rows += sectionHeader(\"Adjacency\", \"🔗\");\n      if (forcedPairs.length > 0)   rows += adjacencyRows(forcedPairs,   `Forced adjacency — score: ${bd.adjacency.forced.score}`);\n      if (optionalPairs.length > 0) rows += adjacencyRows(optionalPairs, `Optional adjacency — score: ${bd.adjacency.optional.score}`);\n    }\n\n    rows += sectionHeader(\"Room State Scoring\", \"🏷️\");\n    rows += row(\"Availability Bonus\", scorePill(bd.availability), false);\n    if (bd.floorPreference) rows += row(\"Floor-preference bonus\", scorePill(bd.floorPreference), true);\n  }\n\n  rows += sectionHeader(\"Score Summary\", \"📊\");\n  rows += `<tr style=\"background:#f7f8fa;\">\n    <td style=\"padding:10px 14px;font-size:13px;color:#333;font-weight:700;vertical-align:middle;\">Reservation Total</td>\n    <td style=\"padding:10px 14px;font-size:16px;vertical-align:middle;\">${scorePill(res.reservationScore)}</td>\n  </tr>`;\n\n  return `<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;margin-bottom:24px;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden;\">\n    <tr style=\"background:${headerBg};border-left:4px solid ${headerBorder};\">\n      <td colspan=\"2\" style=\"padding:12px 16px;\">\n        <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr>\n          <td>\n            <span style=\"font-size:15px;font-weight:700;color:#222;\">${esc(res.reservationId)}</span>\n            <span style=\"font-size:12px;color:#666;margin-left:8px;\">Booking: ${esc(res.bookingId)}</span>\n          </td>\n          <td style=\"text-align:right;\">${statusBadge(bd.feasibility)}</td>\n        </tr></table>\n      </td>\n    </tr>${rows}\n  </table>`;\n}\n\n// -------------------- unmet ASB section --------------------\nfunction unmetAsbsBlock() {\n  const unmet = diag.unmetAsbs ?? [];\n  if (unmet.length === 0) return \"\";\n  const rows = unmet.map(u => `<tr>\n    <td style=\"padding:6px 10px;border:1px solid #f4c4c4;font-size:12px;\">${esc(u.reservationId)}</td>\n    <td style=\"padding:6px 10px;border:1px solid #f4c4c4;font-size:12px;\"><code>${esc(u.identifier)}</code></td>\n    <td style=\"padding:6px 10px;border:1px solid #f4c4c4;font-size:12px;color:#c0392b;\">${esc(u.reason)}</td>\n  </tr>`).join(\"\");\n  return `<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;margin-bottom:24px;border:2px solid #e74c3c;border-radius:6px;overflow:hidden;background:#fff7f6;\">\n    <tr><td style=\"padding:14px 16px;background:#fdecea;\">\n      <div style=\"font-size:14px;font-weight:700;color:#c0392b;font-family:Arial,sans-serif;\">⚠ Unmet Anschlussbuchungen</div>\n      <div style=\"font-size:12px;color:#7d3c98;margin-top:4px;\">The following reservations requested ASB but could not be bound to their previous room. Please review and assign manually.</div>\n    </td></tr>\n    <tr><td style=\"padding:0 12px 12px 12px;\">\n      <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;margin-top:8px;\">\n        <tr style=\"background:#fdecea;\">\n          <th style=\"padding:6px 10px;border:1px solid #f4c4c4;font-size:11px;text-align:left;\">Reservation</th>\n          <th style=\"padding:6px 10px;border:1px solid #f4c4c4;font-size:11px;text-align:left;\">Requested ASB</th>\n          <th style=\"padding:6px 10px;border:1px solid #f4c4c4;font-size:11px;text-align:left;\">Reason</th>\n        </tr>${rows}\n      </table>\n    </td></tr>\n  </table>`;\n}\n\n// -------------------- summary bar --------------------\nconst assigned   = reservations.filter(r => r.assignment).length;\nconst unassigned = reservations.length - assigned;\nconst summaryBar = `<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;margin-bottom:28px;background:#1a1a2e;border-radius:6px;overflow:hidden;\">\n  <tr><td style=\"padding:20px 24px;\">\n    <div style=\"color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;opacity:0.7;\">Room Allocation Report</div>\n    <div style=\"color:#fff;font-size:28px;font-weight:700;margin-bottom:16px;\">Grand Total Score: ${totalScore >= 0 ? \"+\" : \"\"}${totalScore}</div>\n    <table cellpadding=\"0\" cellspacing=\"0\"><tr>\n      <td style=\"padding-right:20px;\"><div style=\"color:#aaa;font-size:11px;text-transform:uppercase;\">Total</div><div style=\"color:#fff;font-size:20px;font-weight:700;\">${reservations.length}</div></td>\n      <td style=\"padding-right:20px;\"><div style=\"color:#aaa;font-size:11px;text-transform:uppercase;\">Assigned</div><div style=\"color:#2ecc71;font-size:20px;font-weight:700;\">${assigned}</div></td>\n      <td style=\"padding-right:20px;\"><div style=\"color:#aaa;font-size:11px;text-transform:uppercase;\">Unassigned</div><div style=\"color:${unassigned > 0 ? \"#e74c3c\" : \"#2ecc71\"};font-size:20px;font-weight:700;\">${unassigned}</div></td>\n      <td style=\"padding-right:20px;\"><div style=\"color:#aaa;font-size:11px;text-transform:uppercase;\">Pre-assigned</div><div style=\"color:#fff;font-size:20px;font-weight:700;\">${diag.preAssignedCount ?? 0}</div></td>\n      <td style=\"padding-right:20px;\"><div style=\"color:#aaa;font-size:11px;text-transform:uppercase;\">Unmet ASBs</div><div style=\"color:${(diag.unmetAsbs?.length ?? 0) > 0 ? \"#e74c3c\" : \"#2ecc71\"};font-size:20px;font-weight:700;\">${diag.unmetAsbs?.length ?? 0}</div></td>\n      <td style=\"padding-right:20px;\"><div style=\"color:#aaa;font-size:11px;text-transform:uppercase;\">Group Proximity</div><div style=\"color:#fff;font-size:20px;font-weight:700;\">${global.bookingGroupProximity ?? 0}</div></td>\n      <td><div style=\"color:#aaa;font-size:11px;text-transform:uppercase;\">Optional Upgrade</div><div style=\"color:${optionalUpgradeAllowed ? \"#2ecc71\" : \"#e74c3c\"};font-size:20px;font-weight:700;\">${optionalUpgradeAllowed ? \"✅ Allowed\" : \"❌ Disabled\"}</div></td>\n    </tr></table>\n  </td></tr></table>`;\n\nconst cards = reservations.map((res, i) => reservationCard(res, i)).join(\"\");\nconst html = `<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\"><title>Room Allocation Report</title></head>\n<body style=\"margin:0;padding:0;background:#f0f2f5;font-family:Arial,sans-serif;\">\n  <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#f0f2f5;\"><tr><td align=\"center\" style=\"padding:24px 12px;\">\n    <table width=\"700\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:700px;width:100%;\">\n      <tr><td>${summaryBar}</td></tr>\n      <tr><td>${unmetAsbsBlock()}</td></tr>\n      <tr><td>${cards}</td></tr>\n      <tr><td style=\"padding:16px 0;text-align:center;font-size:11px;color:#999;\">Generated by Room Allocation Optimizer · v2 · Scores reflect the combined objective function</td></tr>\n    </table>\n  </td></tr></table>\n</body></html>`;\n\nreturn [{ json: { html } }];"
+      },
+      "id": "e7df8294-250d-45bf-ae55-840f25a66282",
+      "name": "Reporting_Prep",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6352,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "toRecipients": "Christian.altrichter@apaleo.com",
+        "subject": "Tomorrows room assignment",
+        "bodyContent": "={{ $json.html }}",
+        "additionalFields": {
+          "bodyContentType": "html"
+        }
+      },
+      "id": "42948c62-d5c2-4137-bab1-2b4c8239b766",
+      "name": "Send a message",
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        6656,
+        464
+      ],
+      "webhookId": "d0acd464-94a0-4d85-9ca7-7089baecbc65",
+      "credentials": {
+        "microsoftOutlookOAuth2Api": {
+          "id": "AFY301r1R7i6lsk5",
+          "name": "CA_Outlook"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "a1140d9b-a839-4fcb-8f3e-8516ce457c76",
+              "leftValue": "={{ $('Edit Fields1').first().json.assing }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cc978594-90de-45e6-b8bc-16554c2f10b0",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        5968,
+        1408
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const reservations = $input.first().json.reservations;\nreturn reservations.filter(r => r.assignment !== null).map(r => ({ json: { id: r.reservationId, unitId: r.assignment.roomId, roomName: r.assignment.roomName } }));"
+      },
+      "id": "c6346619-7e33-4ea9-b1e4-6b6bcc985197",
+      "name": "prepare assignment pairs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6352,
+        1488
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst propID = $('Edit Fields1').first().json.propID;\n\nconst tomorrow = new Date();\ntomorrow.setDate(tomorrow.getDate() + 1);\nconst tomorrowStr = tomorrow.toISOString().slice(0, 10);\n\nconst assignments = items.map(item => {\n  const unit = item.json.unit;\n  return {\n    id: item.json.reservationId ?? '—',\n    unitId: unit?.id ?? '—',\n    roomName: unit?.name ?? '—',\n    status: item.json.status ?? 'unknown'\n  };\n});\n\nconst summary = {\n  total: assignments.length,\n  successful: assignments.filter(a => a.status === 'success').length,\n  failed: assignments.filter(a => a.status !== 'success').length\n};\n\nconst rows = assignments.map(a => `\n  <tr>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#1a1a1a;\">${a.id}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#555;\">${a.unitId}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#555;\">${a.roomName}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;\">\n      <span style=\"display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;background:${a.status === 'success' ? '#e8f5ee' : '#fdecea'};color:${a.status === 'success' ? '#2d6a4f' : '#c0392b'};\">\n        ${a.status}\n      </span>\n    </td>\n  </tr>\n`).join('');\n\nconst html = `\n<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\"/></head>\n<body style=\"margin:0;padding:40px 20px;background:#f5f2ee;font-family:'Courier New',monospace;\">\n  <div style=\"max-width:680px;margin:0 auto;\">\n\n    <!-- Header -->\n    <div style=\"background:#1a1a1a;padding:36px 40px;border-radius:4px 4px 0 0;\">\n      <div style=\"font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#888;margin-bottom:8px;\">Hotel ${propID} · Front Desk Report</div>\n      <div style=\"font-size:26px;font-weight:600;color:#f5f2ee;letter-spacing:-0.02em;\">Room Assignment Summary</div>\n      <div style=\"font-size:11px;color:#666;margin-top:6px;\">${tomorrowStr}</div>\n    </div>\n\n    <!-- Stats -->\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#fff;border-left:1px solid #e0ddd8;border-right:1px solid #e0ddd8;\">\n      <tr>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;border-right:1px solid #f0ede8;\">\n          <div style=\"font-size:36px;font-weight:700;color:#1a1a1a;line-height:1;\">${summary.total}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Total</div>\n        </td>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;border-right:1px solid #f0ede8;\">\n          <div style=\"font-size:36px;font-weight:700;color:#2d6a4f;line-height:1;\">${summary.successful}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Assigned</div>\n        </td>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;\">\n          <div style=\"font-size:36px;font-weight:700;color:#c0392b;line-height:1;\">${summary.failed}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Failed</div>\n        </td>\n      </tr>\n    </table>\n\n    <!-- Table -->\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#fff;border:1px solid #e0ddd8;border-top:none;border-radius:0 0 4px 4px;\">\n      <tr style=\"background:#f5f2ee;\">\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Reservation ID</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Unit ID</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Room</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Status</th>\n      </tr>\n      ${rows}\n    </table>\n\n    <!-- Footer -->\n    <div style=\"margin-top:24px;text-align:center;font-size:10px;color:#bbb;letter-spacing:0.1em;text-transform:uppercase;\">\n      ${propID} · ${tomorrowStr} · Automated Morning Report\n    </div>\n\n  </div>\n</body>\n</html>\n`;\n\nreturn [{ json: { html } }];"
+      },
+      "id": "7c74e004-0b85-492a-b2a8-dfb322192f52",
+      "name": "Code in JavaScript3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7040,
+        1328
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.apaleo.com/booking/v1/reservation-actions/{{ $json.id }}/assign-unit/{{ $json.unitId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "options": {
+          "response": {}
+        }
+      },
+      "id": "bdff191e-1893-4145-80ba-2088523e26fd",
+      "name": "AssignRoom",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        6800,
+        1536
+      ],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "Ae9VAhI7PSXpjwKR",
+          "name": "Apaleo_CA_Test"
+        },
+        "httpBearerAuth": {
+          "id": "EgtVSJVi8AqmPhpo",
+          "name": "Bearer Auth account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9ccce3ff-c8f3-4a56-8bec-b550a99cd772",
+      "name": "Loop Over Items2",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        6576,
+        1488
+      ]
+    },
+    {
+      "parameters": {
+        "toRecipients": "christian.altrichter@apaleo.com",
+        "subject": "Autonomous Room Assignment for tomorrow ",
+        "bodyContent": "={{ $json.html }}",
+        "additionalFields": {
+          "bodyContentType": "html"
+        }
+      },
+      "id": "33e16b70-478b-4665-9ab4-a8533bd93e86",
+      "name": "Send a message1",
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        7280,
+        1328
+      ],
+      "webhookId": "9cdd78e7-77d3-4388-8632-b373bbe20c57",
+      "credentials": {
+        "microsoftOutlookOAuth2Api": {
+          "id": "AFY301r1R7i6lsk5",
+          "name": "CA_Outlook"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const reservations = $input.first().json.reservations;\nfunction cleanString(str) { if (!str) return ''; return str.replace(/\"/g, '').replace(/[\\x00-\\x1F\\x7F]/g, '').trim(); }\nfunction toTitleCase(str) { return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase(); }\nconst output = reservations.filter(r => r.assignment !== null).map(r => {\n  const parts = [];\n  const allSatisfied = [...(r.breakdown?.critical?.satisfied || []), ...(r.breakdown?.preference?.satisfied || [])];\n  if (allSatisfied.length > 0) parts.push('Preferences satisfied: ' + allSatisfied.map(toTitleCase).join(', '));\n  const upgrade = r.breakdown?.upgrade;\n  if (upgrade?.applied) {\n    const bookedType = upgrade.rationale?.bookedType || r.roomTypeBooked;\n    const assignedType = upgrade.rationale?.assignedType || r.assignment?.unitGroupId;\n    const upgradeAction = r.aiRequests?.allowedActions?.find(a => a.action && a.action.toLowerCase().includes('upgrade'));\n    const mode = upgradeAction?.mode === 'FORCED' ? 'Forced' : 'Optional';\n    parts.push('Upgrade [' + mode + ']: ' + bookedType + ' -> ' + assignedType);\n  }\n  if (parts.length === 0) return null;\n  const existingComment = cleanString(r.comment);\n  const agentNote = parts.join('\\\\n');\n  const mergedComment = existingComment ? existingComment + '\\\\nRoomAllocationAgent: ' + agentNote : 'RoomAllocationAgent: ' + agentNote;\n  return { json: { id: r.reservationId, mergedComment } };\n}).filter(Boolean);\nreturn output;"
+      },
+      "id": "12187d3b-482e-4de5-af1c-47b3a4a6b99f",
+      "name": "UpdateResComment",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6352,
+        1888
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "556026f7-62ea-4462-bce1-d0fffaf35c37",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        6576,
+        1936
+      ]
+    },
+    {
+      "parameters": {
+        "toRecipients": "christian.altrichter@apaleo.com",
+        "subject": "Autonomous Room Assignment for tomorrow ",
+        "bodyContent": "={{ $json.html }}",
+        "additionalFields": {
+          "ccRecipients": "philip.vonditfurth@apaleo.com, constantin.rehberg@gmail.com",
+          "bodyContentType": "html"
+        }
+      },
+      "id": "4119fa71-0665-40da-9054-c7953660dd83",
+      "name": "Send a message4",
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        3072,
+        288
+      ],
+      "webhookId": "0c6ee200-7f5f-40d7-9a5f-98c4e414dc70",
+      "credentials": {
+        "microsoftOutlookOAuth2Api": {
+          "id": "AFY301r1R7i6lsk5",
+          "name": "CA_Outlook"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const reservations = $input.first().json.reservations;\nconst output = reservations.filter(r => r.assignment !== null).map(r => ({ json: { id: r.id, mergedComment: '' } }));\nreturn output;"
+      },
+      "id": "cc54e69d-2f89-408f-8e88-810e7411bbb8",
+      "name": "UpdateResComment1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2144,
+        -336
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "bfa17e07-017b-4a21-91d3-6de44a5990c5",
+      "name": "Loop Over Items1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2496,
+        -336
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.apaleo.com/booking/v1/reservations/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[{\"op\":\"add\",\"path\":\"/comment\",\"value\":\"{{ $json.mergedComment }}\"}]",
+        "options": {
+          "response": {}
+        }
+      },
+      "id": "16436972-dfc0-40ad-b265-384ea07b9e9e",
+      "name": "PatchComment",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        6848,
+        1984
+      ],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "Ae9VAhI7PSXpjwKR",
+          "name": "Apaleo_CA_Test"
+        },
+        "httpBearerAuth": {
+          "id": "EgtVSJVi8AqmPhpo",
+          "name": "Bearer Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Room assignment Set Up",
+        "height": 1664,
+        "width": 576,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        272,
+        -144
+      ],
+      "typeVersion": 1,
+      "id": "d79aa064-1287-46f0-b438-de4f0f77e5a7",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.apaleo.com/booking/v1/reservations/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[{\"op\":\"add\",\"path\":\"/comment\",\"value\":\"{{ $json.mergedComment }}\"}]",
+        "options": {
+          "response": {}
+        }
+      },
+      "id": "68087b6f-99b1-4814-a1ed-e7e2ef51068f",
+      "name": "RemoveComment",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2832,
+        -336
+      ],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "Ae9VAhI7PSXpjwKR",
+          "name": "Apaleo_CA_Test"
+        },
+        "httpBearerAuth": {
+          "id": "EgtVSJVi8AqmPhpo",
+          "name": "Bearer Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Remove comments",
+        "height": 416,
+        "width": 1648,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1952,
+        -496
+      ],
+      "typeVersion": 1,
+      "id": "e3fc9864-a662-4375-a7db-f498bfd493c4",
+      "name": "Sticky Note13"
+    },
+    {
+      "parameters": {
+        "content": "## Room Unassignment",
+        "height": 704,
+        "width": 1616
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1968,
+        -16
+      ],
+      "typeVersion": 1,
+      "id": "6c63906d-6435-4aa1-ac76-a12ad2c6be27",
+      "name": "Sticky Note12"
+    },
+    {
+      "parameters": {
+        "content": "## Step 1: \nCheck all currenty assigned rooms (In-House)\n\nConfirmed is excluded as we assumed the agent takes over for all confirmed reservations\n\nCan be adjusted so we consider checkout time in the rooms to be available tomorrow.\n",
+        "height": 400,
+        "width": 528
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1760,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "75985d3a-693c-4cad-bd8c-fcd097484b17",
+      "name": "Sticky Note3",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Step 2: \n\nGet all rooms that we have within a property\n",
+        "height": 400,
+        "width": 400
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2320,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "d583764d-71b1-4e59-a0b7-ca764cba06b0",
+      "name": "Sticky Note6",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Step 3: \n\nGet rooms by availability and room status and get all unique room attributes (because attributes are maintained on an account level, so we need to separate this here)",
+        "height": 400,
+        "width": 768
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2784,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "175583fd-a067-463c-b949-8957ea289e49",
+      "name": "Sticky Note8",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Step 4: \n\nGet Maintenance Slots",
+        "height": 400,
+        "width": 544
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3616,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "db5df4d3-6414-4cd2-ad33-64f316403d01",
+      "name": "Sticky Note",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Step 5: \n\nGet a list with reservations for arrival tomorrow\n",
+        "height": 384,
+        "width": 464
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4208,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "34b9b433-7c71-435c-ae54-0c4a11669027",
+      "name": "Sticky Note7",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Room Allocation Algorithm using a genetic algorithm // Simulated Annealing\n\n**What it does**\nAssigns every reservation to an available room, balancing all guest wishes simultaneously — not one by one.\n\n**How it works**\n1. Pre-assignment passes — Legionella rotation + ASB continuation bookings hard-bind specific rooms BEFORE the optimizer runs\n2. Greedy start — ECI guests first, then most constrained reservations, best available room per scoring\n3. SA optimizer — 20,000 random moves, keeps best result found\n\n**SA Hyperparameters**\n1. Iterations 20,000 — moves attempted\n2. Start temp 200.0 — accepts worse moves early to explore broadly\n3. End temp 0.3 — stops accepting worse moves, locks in best found\n4. Cooling — exponential decay across all iterations\n5. Moves — 55% swap / 30% reassign / 15% cycle three rooms (A→B→C→A)\n6. Candidates — top 5 attribute-matching rooms sampled randomly on reassign\n\n**Configuration source**\n1. Baseline weights live in `BuildConfig.weights` (BASELINE block)\n2. Setup sheet's feature priorities scale every weight by **1 / priority^0.7**\n3. Disabled features (flag = N on Setup) contribute zero\n4. Inspect BuildConfig output to see effective values for this run\n\n**Scoring per category (baseline at priority 1)**\n1. Critical attributes — +240 matched / −420 missed / cap −1,200\n2. Preference attributes — +90 matched / −140 missed / cap −600\n3. Forced adjacency — distance 1=+210, 2=+80, 3+=−280 / cap ±1,600\n4. Optional adjacency — distance 1=+80, 2=+30, 3+=−60 / cap ±600\n5. Group proximity — +110 to −40 per pair / global cap ±1,600\n6. Upgrade quality — good=+80 / neutral=+10 / bad=−120 / cap ±200\n7. Room state — clean=+80 / inspect=+20 / dirty=−120 / tomorrow=−260 / occupied=−350\n8. Floor preference — ±15 per floor step in preferred direction\n9. ECI dirty/occupied extra penalty — −400 on top of room state\n10. Legionella assignment bonus — +800 for force-rotated rooms\n\n**Upgrade quality**\nSurplus = free rooms of type − reservations booked at that type (today's snapshot)\n1. Good (surplus > 3) — rooms sit empty anyway → +80\n2. Neutral (surplus 0–3) — supply and demand balanced → +10\n3. Bad (surplus < 0) — takes a room from a paying guest → −120\n\n**Upgrade rules (driven by Memberships sheet)**\n1. OPTIONAL (e.g. Gold) — half weight, suites blocked\n2. FORCED (e.g. Platinum / Diamond / VIP / Ambassador) — full weight, suites unlocked\n3. FORCED bumps quality up one tier (bad→neutral, neutral→good)\n4. Suite ranks come from RoomRanks sheet (Protected flag)\n\n**Pre-assignment (runs BEFORE SA)**\n1. Legionella — rooms vacant ≥ `legionella_max_vacancy_days` get bound to a feasible same-type reservation\n2. ASB — `ASB:<id>` actions resolve by room number, reservation ID, or booking ID, then hard-bind\n3. Pre-assigned reservations / rooms exit the SA pool — the optimizer cannot move them\n4. Unmet ASBs surface in the daily report\n\n**What it does not do**\n1. Upsell actions — parsed but not yet scored\n2. Real floor maps — adjacency from room numbers only, named rooms have no neighbours\n3. Re-run on changes — static snapshot at time of run (configurable: today or tomorrow)\n4. Hard-enforce adjacency — soft penalty only, forced pairs can still end up far apart\n5. Pickup forecasting — upgrade-quality snapshot uses today's demand only, no look-ahead\n\n**Score guardrails**\n1. Unassigned — −250,000, near-absolute\n2. Wrong room type — −1,000,000, hard block\n3. Suite protection — enforced in code via `protectedSuiteRanks`, weights alone cannot override\n4. Maintenance-blocked rooms — excluded from the assignable pool entirely",
+        "height": 1776,
+        "width": 768
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5168,
+        -608
+      ],
+      "typeVersion": 1,
+      "id": "bd58c322-af8a-4a69-8bf7-c03b98d5406b",
+      "name": "Sticky Note11",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Add comments",
+        "height": 416,
+        "width": 1648,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6288,
+        1840
+      ],
+      "typeVersion": 1,
+      "id": "72687e6b-9f11-4960-88a4-35d0a1c62409",
+      "name": "Sticky Note14"
+    },
+    {
+      "parameters": {
+        "content": "## Room Assignment\n\non Error = continue, so should a room for whoever reason not be able to be assigned, we still finish the loop to minimize impact",
+        "height": 704,
+        "width": 1616
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6304,
+        1104
+      ],
+      "typeVersion": 1,
+      "id": "1094d298-b92a-425b-9d09-1cfefefc6be3",
+      "name": "Sticky Note15"
+    },
+    {
+      "parameters": {
+        "content": "## Send out Report",
+        "height": 288,
+        "width": 384,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6560,
+        368
+      ],
+      "typeVersion": 1,
+      "id": "68c8f9a3-e733-4c5a-9048-84ad489288e1",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Send out Report",
+        "height": 288,
+        "width": 384,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        7184,
+        1232
+      ],
+      "typeVersion": 1,
+      "id": "cfb5073b-0a39-4851-bfb2-3c4bffe5e954",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Send out Report",
+        "height": 288,
+        "width": 384,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2992,
+        208
+      ],
+      "typeVersion": 1,
+      "id": "7c2c0f44-d13d-477d-9a6f-e5444f46ed77",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Possible to trigger via a type form (which can be integrated into the apaleo UI, thus triggered by an Employee). This also enables the Unassignment feature to reverse the actions of the assignment)",
+        "height": 304,
+        "width": 704,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -864,
+        -48
+      ],
+      "typeVersion": 1,
+      "id": "754a508f-a9e7-4bc9-8214-924d21555cbb",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "## Mannual Trigger",
+        "height": 304,
+        "width": 704,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -848,
+        576
+      ],
+      "typeVersion": 1,
+      "id": "35d8077d-2144-478e-9e8d-1c036f4df209",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "content": "## Scheduled Trigger (i.e, every day at 07:00 AM)",
+        "height": 304,
+        "width": 704,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -832,
+        1248
+      ],
+      "typeVersion": 1,
+      "id": "c1483d18-2302-48f4-8d32-ed6faff675c2",
+      "name": "Sticky Note16"
+    }
+  ],
+  "pinData": {
+    "Typeform Trigger": [
+      {
+        "json": {
+          "What is your email address?": "christian.altrichter@apaleo.com",
+          "Are optional upgrades allowed?": true,
+          "Should the rooms be allocated?": true
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Setup_Setup",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_RoomRanks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_SOPExamples",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Glossary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Memberships",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Actions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Setup_Setup": {
+      "main": [
+        [
+          {
+            "node": "Setup_Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Setup_Merge": {
+      "main": [
+        [
+          {
+            "node": "BuildConfig",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Setup_RoomRanks": {
+      "main": [
+        [
+          {
+            "node": "Setup_Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Setup_SOPExamples": {
+      "main": [
+        [
+          {
+            "node": "Setup_Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Setup_Glossary": {
+      "main": [
+        [
+          {
+            "node": "Setup_Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Setup_Memberships": {
+      "main": [
+        [
+          {
+            "node": "Setup_Merge",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Setup_Actions": {
+      "main": [
+        [
+          {
+            "node": "Setup_Merge",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Setup_Setup",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_RoomRanks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_SOPExamples",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Glossary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Memberships",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Actions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Typeform Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Setup_Setup",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_RoomRanks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_SOPExamples",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Glossary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Memberships",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Setup_Actions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BuildConfig": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Get Access Token",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Access Token": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Apaleo Official",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ListofReservations_withRoom",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apaleo Official": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "UpdateResComment1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript5": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unassign units from a reservation in Apaleo Official": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript4": {
+      "main": [
+        [
+          {
+            "node": "Send a message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ListofReservations_withRoom": {
+      "main": [
+        [
+          {
+            "node": "Blocked_AvailToday_Preassigned",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Blocked_AvailToday_Preassigned": {
+      "main": [
+        [
+          {
+            "node": "AllRooms",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AllRooms": {
+      "main": [
+        [
+          {
+            "node": "AvailableRoomsByScoring",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AvailableRoomsByScoring": {
+      "main": [
+        [
+          {
+            "node": "UniqueAttributes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UniqueAttributes": {
+      "main": [
+        [
+          {
+            "node": "GetMaintenance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetMaintenance": {
+      "main": [
+        [
+          {
+            "node": "Maintenance_Slots",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Maintenance_Slots": {
+      "main": [
+        [
+          {
+            "node": "Returns a list of all reservations filtered by the specified parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Returns a list of all reservations filtered by the specified parameters": {
+      "main": [
+        [
+          {
+            "node": "ArrivalsToday",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ArrivalsToday": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Simulated Annealing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simulated Annealing": {
+      "main": [
+        [
+          {
+            "node": "Reporting_Prep",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reporting_Prep": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "prepare assignment pairs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "UpdateResComment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "prepare assignment pairs": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AssignRoom": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AssignRoom",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UpdateResComment": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "PatchComment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UpdateResComment1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "RemoveComment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PatchComment": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RemoveComment": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": true
+  },
+  "versionId": "25341690-2ae5-4bd4-b24b-fcf83984bb44",
+  "meta": {
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp",
+    "instanceId": "368629e78457d61416bc78e196c3f5dba5296a615424f12489d38bb4f6a9d6ff"
+  },
+  "id": "Y9lgnHY12A5QBvwu",
+  "tags": []
+}

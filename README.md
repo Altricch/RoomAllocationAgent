@@ -115,39 +115,16 @@ FORCED upgrades (e.g. Platinum, Diamond) bump quality one tier up (bad → neutr
 
 ```
 .
-├── README.md                           This file
+├── README.md                                               This file
 │
-├── n8n/
-│   ├── RoomAssignmentAgent.json        Full n8n workflow export
-│   └── nodes/                          Standalone code node bodies for review
-│       ├── BuildConfig.js
-│       ├── Simulated_Annealing.js
-│       ├── Blocked_AvailToday_Preassigned.js
-│       ├── Reporting_Prep.js
-│       └── AI_Agent_prompt.txt
+├── 00_n8n_workflow/
+│   └── RoomAssignmentAgent_v1.json                         Full n8n workflow export (v1)
 │
-├── python/                             Standalone Python implementation
-│   ├── README.md                       Python-specific setup and usage
-│   ├── requirements.txt
-│   └── src/
-│       ├── build_config.py
-│       ├── simulated_annealing.py
-│       ├── pre_assignment.py
-│       └── reporting.py
+├── 01_Google_Sheets_Config/
+│   └── RoomAllocationAgent_Setup_Productized-2.xlsx        Ready-to-use Setup spreadsheet template
 │
-├── sheets/
-│   ├── RoomAllocationAgent_Setup.xlsx  The canonical Setup workbook
-│   └── README.md                       Per-tab documentation
-│
-├── results/                            Statistical results / analyses
-│   ├── benchmark_<date>.csv            Run-by-run optimisation traces
-│   ├── score_distribution.png          Score vs reservation count
-│   └── analysis.md                     Methodology + findings
-│
-└── docs/
-    ├── architecture.md                 Diagrams and component-level detail
-    ├── scoring_rulebook.md             Full weights/caps reference
-    └── sticky_notes/                   Paste-ready sticky notes for the n8n canvas
+└── 02_Proof/
+    └── RoomAllocationAgent_Proof_against_greedy_solution.pdf  Optimality proof vs greedy baseline
 ```
 
 ---
@@ -165,9 +142,9 @@ FORCED upgrades (e.g. Platinum, Diamond) bump quality one tier up (bad → neutr
 
 1. **Apaleo** — register an integration in your Apaleo developer account. Note the client ID and secret. Make sure the integration has read access to reservations, bookings, units, and maintenance, plus write access for unit assignment and reservation patch.
 
-2. **Google Sheets** — copy `sheets/RoomAllocationAgent_Setup.xlsx` into Google Drive. Open each tab and confirm the cells look correct after the conversion. Fill in your property's row data on `RoomRanks` (room type IDs, ranks, protected-suite flags).
+2. **Google Sheets** — upload `01_Google_Sheets_Config/RoomAllocationAgent_Setup_Productized-2.xlsx` to Google Drive and open it as a Google Sheet. It already contains all six tabs (Setup, RoomRanks, SOPExamples, CommentGlossary, Memberships, Actions) with the expected column headers and example rows. Fill in your property's rows on `RoomRanks` (room type IDs, ranks, protected-suite flags) and adapt `CommentGlossary`/`SOPExamples` for your property's language.
 
-3. **n8n** — import `n8n/RoomAssignmentAgent.json`. You'll be prompted to assign credentials for:
+3. **n8n** — import `00_n8n_workflow/RoomAssignmentAgent_v1.json`. You'll be prompted to assign credentials for:
    - Google Sheets (one credential, reused on all six setup nodes)
    - Apaleo OAuth2 (one credential)
    - OpenRouter (or your LLM provider of choice)
@@ -197,35 +174,9 @@ No code changes required.
 
 ---
 
-## Python implementation
+## Optimality proof
 
-The `python/` directory mirrors the n8n workflow's algorithmic core:
-
-- `build_config.py` — parses the Setup workbook (or an equivalent CSV bundle) into the same config object the n8n `BuildConfig` node produces.
-- `pre_assignment.py` — runs the Legionella and ASB hard-bind passes.
-- `simulated_annealing.py` — the optimisation core with identical move types, cooling schedule, and scoring functions.
-- `reporting.py` — renders the same HTML report.
-
-It exists for three reasons:
-1. **Reproducibility** — anyone can run the optimiser on historical data without an n8n instance.
-2. **Benchmarking** — the statistical results in `results/` are generated from this implementation.
-3. **Development velocity** — algorithmic changes are easier to write, test, and version-control in Python than in n8n's code nodes.
-
-See `python/README.md` for usage.
-
----
-
-## Statistical results
-
-`results/` contains:
-
-- **Score distribution** by property and reservation count — how the total score scales with arrival volume.
-- **Per-feature impact analysis** — score delta when each feature is toggled off, helping prioritise tuning effort.
-- **SA convergence traces** — temperature vs best score over iterations, useful for validating the cooling schedule.
-- **Pre-assignment hit rate** — how often Legionella and ASB pre-binds actually fire in practice.
-- **AI agent precision** — sampled manual review of the LLM's matchedRequests / inferredMatchedRequests outputs.
-
-Methodology and findings are in `results/analysis.md`.
+`02_Proof/RoomAllocationAgent_Proof_against_greedy_solution.pdf` documents the formal comparison between the Simulated Annealing optimiser and a greedy room-assignment baseline, demonstrating that SA consistently produces superior assignments across a range of property sizes and arrival volumes.
 
 ---
 
@@ -250,7 +201,6 @@ This workflow went through three substantive iterations:
 - **v2** — collapsed to six tabs: feature flags + priorities replace direct weight editing, logarithmic priority scaling (`1 / priority^0.7`) handles relative importance automatically, Memberships and Actions become data-driven sheet tabs, property ID and day flag become parameters, ASB matching gains room-number resolution, Unmet ASB diagnostics appear in the report.
 - **v2.1** — paste-safe BuildConfig rewrite (avoids `\n` and `\\|` escape mangling when round-tripping through the n8n SDK), row classifier keyed off actual sheet title columns, intro paragraphs and column-header rows filtered out before parsing.
 
-Detailed change notes are in `docs/architecture.md`.
 
 ---
 
@@ -260,4 +210,4 @@ Specify your license here (MIT, Apache 2.0, etc.).
 
 ## Contributing
 
-PRs welcome for: alternative scoring weights, additional pre-assignment passes (e.g. preventive maintenance scheduling), floor-map adjacency input, look-ahead upgrade classification, and Python parity for any n8n nodes not yet ported.
+PRs welcome for: alternative scoring weights, additional pre-assignment passes (e.g. preventive maintenance scheduling), floor-map adjacency input, and look-ahead upgrade classification.

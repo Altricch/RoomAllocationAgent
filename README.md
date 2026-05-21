@@ -184,29 +184,16 @@ No code changes required.
 
 Things to be aware of when interpreting outputs or planning changes:
 
-- **Upgrade quality is a snapshot.** The good/neutral/bad classification uses the inventory state at the moment the run starts. A "good upgrade" earlier in the day may become a "bad upgrade" later as bookings arrive. The optimiser does not look ahead.
+- **Upgrade quality is a snapshot.** The good/neutral/bad classification uses the inventory state at the moment the run starts. A "good upgrade" earlier in the day may become a "bad upgrade" later as bookings arrive. The optimiser does not look ahead. For more compliated upgrade logics we recommend a sperate agent. 
 - **Adjacency relies on room numbering.** Two rooms are considered neighbours only if their numeric names differ by 1 on the same floor block. Named rooms (e.g. "Presidential Suite") have no neighbours in the graph, so any forced adjacency involving them scores at the distance 3+ penalty regardless of physical layout. A future improvement would be an explicit floor-map input.
-- **ASB room-number lookup uses substring fallback.** If the literal identifier isn't found, `resolveAsbRoom` falls back to a substring match. This can mis-bind if two room numbers share a digit pattern (e.g. "16" matching both room 16 and room 216). Check the Unmet ASBs report for false hits.
 - **Unassigned penalty dominates.** A reservation with a FORCED adjacency requirement may end up far from its required neighbour (−280 penalty) rather than unassigned (−250,000), and the optimiser will accept that trade. If adjacency is truly non-negotiable for some reservation pairs, they need their own hard constraint, not a soft gradient.
 - **Global bonuses are tiebreakers.** With dozens of reservations each scoring in the hundreds, the +500 all-forced-adjacency bonus and the +220 per-booking cluster bonus rarely flip borderline decisions on their own. They function as tiebreakers rather than dominant signals.
-- **Upsell action is parsed but not scored.** Reserved for future revenue-aware logic.
-
----
-
-## Project history
-
-This workflow went through three substantive iterations:
-
-- **v1** — eight-tab rulebook with raw weights exposed to operators, hard-coded membership tiers in the AI prompt, hard-coded property ID, fixed today-only arrival window. Reasonable but rigid.
-- **v2** — collapsed to six tabs: feature flags + priorities replace direct weight editing, logarithmic priority scaling (`1 / priority^0.7`) handles relative importance automatically, Memberships and Actions become data-driven sheet tabs, property ID and day flag become parameters, ASB matching gains room-number resolution, Unmet ASB diagnostics appear in the report.
-- **v2.1** — paste-safe BuildConfig rewrite (avoids `\n` and `\\|` escape mangling when round-tripping through the n8n SDK), row classifier keyed off actual sheet title columns, intro paragraphs and column-header rows filtered out before parsing.
-
+- **Upsell action is Reserved for future revenue-aware logic.
 
 ---
 
 ## License
-
-Specify your license here (MIT, Apache 2.0, etc.).
+Apache 2.0
 
 ## Contributing
 

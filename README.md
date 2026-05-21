@@ -153,6 +153,11 @@ FORCED upgrades (e.g. Platinum, Diamond) bump quality one tier up (bad → neutr
 
 1. **Apaleo** — register an integration in your Apaleo developer account. Note the client ID and secret. Make sure the integration has read access to reservations, bookings, units, and maintenance, plus write access for unit assignment and reservation patch.
 
+The following link gives you the application with the needed scopes: 
+
+https://app.apaleo.com/apps/connected-apps/create?clientCode=ROOMALLOCATIONAGENT&clientName=RoomAllocationAgent&secret=RoomAllocationAgent&clientScopes=%5B%22maintenances.read%22,%22reservations.manage%22,%22reservations.read%22,%22setup.read%22%5D&piiMode=Retrieve
+
+
 2. **Google Sheets** — upload `01_Google_Sheets_Config/RoomAllocationAgent_Setup_Productized-2.xlsx` to Google Drive and open it as a Google Sheet. It already contains all six tabs (Setup, RoomRanks, SOPExamples, CommentGlossary, Memberships, Actions) with the expected column headers and example rows. Fill in your property's rows on `RoomRanks` (room type IDs, ranks, protected-suite flags) and adapt `CommentGlossary`/`SOPExamples` for your property's language.
 
 3. **n8n** — import `00_n8n_workflow/RoomAssignmentAgent_v1.json`. You'll be prompted to assign credentials for:

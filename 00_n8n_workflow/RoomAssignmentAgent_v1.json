@@ -941,14 +941,14 @@
     },
     {
       "parameters": {
-        "jsCode": "const items = $input.all();\nconst propID = $('Edit Fields1').first().json.propID;\n\nconst tomorrow = new Date();\ntomorrow.setDate(tomorrow.getDate() + 1);\nconst tomorrowStr = tomorrow.toISOString().slice(0, 10);\n\nconst assignments = items.map(item => {\n  const unit = item.json.unit;\n  return {\n    id: item.json.reservationId ?? '—',\n    unitId: unit?.id ?? '—',\n    roomName: unit?.name ?? '—',\n    status: item.json.status ?? 'unknown'\n  };\n});\n\nconst summary = {\n  total: assignments.length,\n  successful: assignments.filter(a => a.status === 'success').length,\n  failed: assignments.filter(a => a.status !== 'success').length\n};\n\nconst rows = assignments.map(a => `\n  <tr>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#1a1a1a;\">${a.id}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#555;\">${a.unitId}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#555;\">${a.roomName}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;\">\n      <span style=\"display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;background:${a.status === 'success' ? '#e8f5ee' : '#fdecea'};color:${a.status === 'success' ? '#2d6a4f' : '#c0392b'};\">\n        ${a.status}\n      </span>\n    </td>\n  </tr>\n`).join('');\n\nconst html = `\n<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\"/></head>\n<body style=\"margin:0;padding:40px 20px;background:#f5f2ee;font-family:'Courier New',monospace;\">\n  <div style=\"max-width:680px;margin:0 auto;\">\n\n    <!-- Header -->\n    <div style=\"background:#1a1a1a;padding:36px 40px;border-radius:4px 4px 0 0;\">\n      <div style=\"font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#888;margin-bottom:8px;\">Hotel ${propID} · Front Desk Report</div>\n      <div style=\"font-size:26px;font-weight:600;color:#f5f2ee;letter-spacing:-0.02em;\">Room Assignment Summary</div>\n      <div style=\"font-size:11px;color:#666;margin-top:6px;\">${tomorrowStr}</div>\n    </div>\n\n    <!-- Stats -->\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#fff;border-left:1px solid #e0ddd8;border-right:1px solid #e0ddd8;\">\n      <tr>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;border-right:1px solid #f0ede8;\">\n          <div style=\"font-size:36px;font-weight:700;color:#1a1a1a;line-height:1;\">${summary.total}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Total</div>\n        </td>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;border-right:1px solid #f0ede8;\">\n          <div style=\"font-size:36px;font-weight:700;color:#2d6a4f;line-height:1;\">${summary.successful}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Assigned</div>\n        </td>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;\">\n          <div style=\"font-size:36px;font-weight:700;color:#c0392b;line-height:1;\">${summary.failed}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Failed</div>\n        </td>\n      </tr>\n    </table>\n\n    <!-- Table -->\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#fff;border:1px solid #e0ddd8;border-top:none;border-radius:0 0 4px 4px;\">\n      <tr style=\"background:#f5f2ee;\">\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Reservation ID</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Unit ID</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Room</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Status</th>\n      </tr>\n      ${rows}\n    </table>\n\n    <!-- Footer -->\n    <div style=\"margin-top:24px;text-align:center;font-size:10px;color:#bbb;letter-spacing:0.1em;text-transform:uppercase;\">\n      ${propID} · ${tomorrowStr} · Automated Morning Report\n    </div>\n\n  </div>\n</body>\n</html>\n`;\n\nreturn [{ json: { html } }];"
+        "jsCode": "const items = $input.all();\nconst propID = $('Edit Fields1').first().json.propID;\nconst inputPairs = $('prepare assignment pairs').all();   // original {id, unitId, roomName}\n\nconst tomorrow = new Date();\ntomorrow.setDate(tomorrow.getDate() + 1);\nconst tomorrowStr = tomorrow.toISOString().slice(0, 10);\n\nconst assignments = items.map((item, idx) => {\n  const unit     = item.json.unit;\n  const original = inputPairs[idx]?.json ?? {};\n  // Apaleo returns the assigned unit on success; if `unit` is missing, the call failed.\n  const success  = !!unit?.id;\n  return {\n    id:       original.id       ?? '—',\n    unitId:   unit?.id          ?? original.unitId   ?? '—',\n    roomName: unit?.name        ?? original.roomName ?? '—',\n    status:   success ? 'success' : 'failed',\n  };\n});\n\nconst summary = {\n  total: assignments.length,\n  successful: assignments.filter(a => a.status === 'success').length,\n  failed: assignments.filter(a => a.status !== 'success').length\n};\n\nconst rows = assignments.map(a => `\n  <tr>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#1a1a1a;\">${a.id}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#555;\">${a.unitId}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;font-family:'Courier New',monospace;font-size:13px;color:#555;\">${a.roomName}</td>\n    <td style=\"padding:12px 24px;border-bottom:1px solid #f5f2ee;\">\n      <span style=\"display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;background:${a.status === 'success' ? '#e8f5ee' : '#fdecea'};color:${a.status === 'success' ? '#2d6a4f' : '#c0392b'};\">\n        ${a.status}\n      </span>\n    </td>\n  </tr>\n`).join('');\n\nconst html = `\n<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\"/></head>\n<body style=\"margin:0;padding:40px 20px;background:#f5f2ee;font-family:'Courier New',monospace;\">\n  <div style=\"max-width:680px;margin:0 auto;\">\n\n    <!-- Header -->\n    <div style=\"background:#1a1a1a;padding:36px 40px;border-radius:4px 4px 0 0;\">\n      <div style=\"font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#888;margin-bottom:8px;\">Hotel ${propID} · Front Desk Report</div>\n      <div style=\"font-size:26px;font-weight:600;color:#f5f2ee;letter-spacing:-0.02em;\">Room Assignment Summary</div>\n      <div style=\"font-size:11px;color:#666;margin-top:6px;\">${tomorrowStr}</div>\n    </div>\n\n    <!-- Stats -->\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#fff;border-left:1px solid #e0ddd8;border-right:1px solid #e0ddd8;\">\n      <tr>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;border-right:1px solid #f0ede8;\">\n          <div style=\"font-size:36px;font-weight:700;color:#1a1a1a;line-height:1;\">${summary.total}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Total</div>\n        </td>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;border-right:1px solid #f0ede8;\">\n          <div style=\"font-size:36px;font-weight:700;color:#2d6a4f;line-height:1;\">${summary.successful}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Assigned</div>\n        </td>\n        <td width=\"33%\" style=\"padding:24px;text-align:center;\">\n          <div style=\"font-size:36px;font-weight:700;color:#c0392b;line-height:1;\">${summary.failed}</div>\n          <div style=\"font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;margin-top:6px;\">Failed</div>\n        </td>\n      </tr>\n    </table>\n\n    <!-- Table -->\n    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#fff;border:1px solid #e0ddd8;border-top:none;border-radius:0 0 4px 4px;\">\n      <tr style=\"background:#f5f2ee;\">\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Reservation ID</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Unit ID</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Room</th>\n        <th style=\"padding:10px 24px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:#999;font-weight:500;\">Status</th>\n      </tr>\n      ${rows}\n    </table>\n\n    <!-- Footer -->\n    <div style=\"margin-top:24px;text-align:center;font-size:10px;color:#bbb;letter-spacing:0.1em;text-transform:uppercase;\">\n      ${propID} · ${tomorrowStr} · Automated Morning Report\n    </div>\n\n  </div>\n</body>\n</html>\n`;\n\nreturn [{ json: { html } }];"
       },
       "id": "7c74e004-0b85-492a-b2a8-dfb322192f52",
       "name": "Code in JavaScript3",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        7040,
+        6960,
         1328
       ]
     },
@@ -1273,7 +1273,7 @@
       "parameters": {
         "content": "## Step 4: \n\nGet Maintenance Slots",
         "height": 400,
-        "width": 544
+        "width": 560
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
@@ -1443,6 +1443,22 @@
       "typeVersion": 1,
       "id": "c1483d18-2302-48f4-8d32-ed6faff675c2",
       "name": "Sticky Note16"
+    },
+    {
+      "parameters": {
+        "content": "## Needs manual switch (on purpose)\n",
+        "height": 1344,
+        "width": 2464,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1552,
+        -656
+      ],
+      "typeVersion": 1,
+      "id": "2c3ce928-c4ec-4534-b449-303b6302fd12",
+      "name": "Sticky Note17"
     }
   ],
   "pinData": {
@@ -2111,7 +2127,7 @@
     "callerPolicy": "workflowsFromSameOwner",
     "availableInMCP": true
   },
-  "versionId": "25341690-2ae5-4bd4-b24b-fcf83984bb44",
+  "versionId": "0c66e436-c5be-47de-b6bd-f02ced0bb57f",
   "meta": {
     "aiBuilderAssisted": true,
     "builderVariant": "mcp",

@@ -1,6 +1,6 @@
 # Room Allocation Agent by Apaleo
 
-An automated room-assignment system for hotels running on the [Apaleo](https://apaleo.com) PMS. It reads tomorrow's (or today's) arrivals, asks an LLM to interpret each guest's free-text comment, then runs a Simulated Annealing optimiser to assign every reservation to a physical room while balancing guest requests, adjacency, upgrades, operational constraints, and inventory pressure.
+A room-assignment system for hotels running on the [Apaleo](https://apaleo.com) PMS. It reads tomorrow's (or today's) arrivals, asks an LLM to interpret each guest's free-text comment, then runs a Simulated Annealing optimiser to assign every reservation to a physical room while balancing guest requests, adjacency, upgrades, operational constraints, and inventory pressure.
 
 Configuration is fully sheet-driven. A single Google Sheet controls feature on/off flags, priority ordering, the room-type hierarchy, loyalty tiers, property-specific phrase dictionaries, and the choice of property and day. The same workflow runs against multiple properties with no code changes.
 

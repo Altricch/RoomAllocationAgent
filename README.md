@@ -123,8 +123,19 @@ FORCED upgrades (e.g. Platinum, Diamond) bump quality one tier up (bad → neutr
 ├── 01_Google_Sheets_Config/
 │   └── RoomAllocationAgent_Setup_Productized-2.xlsx        Ready-to-use Setup spreadsheet template
 │
-└── 02_Proof/
-    └── RoomAllocationAgent_Proof_against_greedy_solution.pdf  Optimality proof vs greedy baseline
+├── 02_Proof/
+│   └── RoomAllocationAgent_Proof_against_greedy_solution.pdf  Optimality proof vs greedy baseline
+│
+└── 03_SampleReport/
+    ├── 01_Room_Assignment_Detailed.pdf                     Full sample output report (detailed view)
+    ├── 02_Room_Assignment_Confirmation.pdf                 Sample confirmation report
+    ├── 03.1_Scoring_Adjacency1.png                         Score breakdown — adjacency (example 1)
+    ├── 03.2_Scoring_Adjacency2.png                         Score breakdown — adjacency (example 2)
+    ├── 04.1Scoring_PlatinumMember.png                      Score breakdown — Platinum loyalty tier
+    ├── 04.2_Scoring_GoldMember.png                         Score breakdown — Gold loyalty tier
+    ├── 05.1_Scoring_HighFloor_NiceView.png                 Score breakdown — high floor + view request
+    ├── 05.2_Scoring_HighFloor.png                          Score breakdown — high floor request
+    └── 05.3_Scoring_LowFloor.png                          Score breakdown — low floor request
 ```
 
 ---
@@ -177,6 +188,18 @@ No code changes required.
 ## Optimality proof
 
 `02_Proof/RoomAllocationAgent_Proof_against_greedy_solution.pdf` documents the formal comparison between the Simulated Annealing optimiser and a greedy room-assignment baseline, demonstrating that SA consistently produces superior assignments across a range of property sizes and arrival volumes.
+
+---
+
+## Sample reports
+
+`03_SampleReport/` contains real output examples (guest data anonymised):
+
+- **01_Room_Assignment_Detailed.pdf** — the full per-reservation HTML report as sent to front office, showing matched requests, the chosen room, and a complete score breakdown for every reservation.
+- **02_Room_Assignment_Confirmation.pdf** — the shorter confirmation view.
+- **03.x_Scoring_Adjacency** — screenshots showing how adjacency constraints score across different room distances.
+- **04.x_Scoring_Member** — screenshots illustrating the score difference between a Platinum (FORCED upgrade) and a Gold (OPTIONAL upgrade) loyalty member.
+- **05.x_Scoring_Floor** — screenshots showing floor-preference scoring for high-floor+view, high-floor, and low-floor requests.
 
 ---
 

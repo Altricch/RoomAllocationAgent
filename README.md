@@ -155,6 +155,8 @@ FORCED upgrades (e.g. Platinum, Diamond) bump quality one tier up (bad → neutr
 
 1. **Apaleo** — register an integration in your Apaleo developer account. Note the client ID and secret. Make sure the integration has read access to reservations, bookings, units, and maintenance, plus write access for unit assignment and reservation patch.
 
+Please make sure to give each room between 1-4 room attributes that match your hotel operations. They need to be distinc and clearly sperable.
+
 The following link gives you the application with the needed scopes: 
 
 https://app.apaleo.com/apps/connected-apps/create?clientCode=ROOMALLOCATIONAGENT&clientName=RoomAllocationAgent&secret=RoomAllocationAgent&clientScopes=%5B%22maintenances.read%22,%22reservations.manage%22,%22reservations.read%22,%22setup.read%22%5D&piiMode=Retrieve

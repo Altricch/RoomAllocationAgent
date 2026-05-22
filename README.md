@@ -4,6 +4,8 @@ A room-assignment system for hotels running on the [Apaleo](https://apaleo.com) 
 
 Configuration is fully sheet-driven. A single Google Sheet controls feature on/off flags, priority ordering, the room-type hierarchy, loyalty tiers, property-specific phrase dictionaries, and the choice of property and day. The same workflow runs against multiple properties with no code changes.
 
+PRE-REQUISIT: Your room attributes must be well maintained. 
+
 ---
 
 ## What it does
